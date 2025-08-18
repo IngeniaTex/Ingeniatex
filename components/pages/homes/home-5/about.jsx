@@ -12,7 +12,7 @@ const AboutFive = () => {
     return (
         <>
         <div className="about__five section-padding" style={{backgroundImage: `url(${aboutBg.src})`}}>
-            <div className="brand__area mb-120">
+            {/* <div className="brand__area mb-120">
                 <div className="container">
                     <div className="col-xl-12">
                         <div className="text__slider">
@@ -55,7 +55,7 @@ const AboutFive = () => {
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>   */}  
             <div className="container">
                 <div className="row align-items-center flex-wrap-reverse gy-4">
                     <div className="col-xl-6 col-lg-8">
@@ -68,25 +68,27 @@ const AboutFive = () => {
                     </div>
                     <div className="col-xl-6 col-lg-7 col-md-9">
                         <div className="about__five-content">
-                            <span className="subtitle-one">About us</span>
-                            <h2>Innovating Solutions for Your Business</h2>
+                            <span className="subtitle-one">Sobre nosotros</span>
+                            <h2>Innovamos soluciones para tu negocio</h2>
                             <div className="about__five-content-service">
                                 <div className="single-service">
                                     <i className="fas fa-check-circle"></i>
                                     <div className="single-service-content">
-                                        <h4>Shaping the Digital Future</h4>
-                                        <p>Intuitive and user-friendly Customizable themes and layouts Drag-and-drop functionality for ease of use</p>
+                                        <h4>Transformamos el futuro digital</h4>
+                                        <p>Creamos sitios web y aplicaciones intuitivas, rápidas y optimizadas
+                                        para que tu empresa se posicione y atraiga más clientes.</p>
                                     </div>
                                 </div>
                                 <div className="single-service">
                                     <i className="fas fa-check-circle"></i>
                                     <div className="single-service-content">
-                                        <h4>Shaping the Digital Future</h4>
-                                        <p>Intuitive and user-friendly Customizable themes and layouts Drag-and-drop functionality for ease of use</p>
+                                        <h4>Soluciones personalizadas</h4>
+                                        <p>Diseñamos experiencias digitales adaptadas a tus necesidades,
+                                        fáciles de administrar y listas para crecer junto contigo.</p>
                                     </div>
                                 </div>
                             </div>
-                            <Link href="/about" className="btn-one">Discover More
+                            <Link href="/about" className="btn-one">Conoce más
                                 <i className="fas fa-arrow-right"></i>
                             </Link>
                         </div> 

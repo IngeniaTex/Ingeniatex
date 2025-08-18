@@ -43,12 +43,12 @@ const ResponsiveMenu = () => {
                             <li><Link href="/404">404</Link></li>
                         </ul>
                     <a className={`mean-expand ${activeIcon("pages")}`} onClick={() => active("pages")}></a>
-                </li>
-                <li className='menu-item-has-children'><Link href='#'>Services</Link>
+                </li> 
+                <li className='menu-item-has-children'><Link href='#'>Servicios</Link>
                     <ul className='sub-menu' style={activeSubMenu("services")}>
                         <li><Link href="/services">Services 01</Link></li>
                         <li><Link href="/services-two">Services 02</Link></li>
-                        <li><Link href="/services/data-analytics">Services Details</Link></li>
+                        {/* <li><Link href="/services/data-analytics">Services Details</Link></li> */}
                     </ul>
                     <a className={`mean-expand ${activeIcon("services")}`} onClick={() => active("services")}></a>
                 </li>
@@ -59,7 +59,7 @@ const ResponsiveMenu = () => {
                         <li><Link href="/portfolio/gateway-integration">Portfolio Details</Link></li>
                     </ul>
                     <a className={`mean-expand ${activeIcon("project")}`} onClick={() => active("project")}></a>
-                </li>
+                </li> 
                 <li className='menu-item-has-children'><Link href='#'>Blog</Link>
                     <ul className='sub-menu' style={activeSubMenu("blog")}>
                         <li><Link href="/blog">Blog Grid</Link></li>
@@ -67,7 +67,8 @@ const ResponsiveMenu = () => {
                         <li><Link href="/blog/ux-ui-designing-the-future-web-design">Blog Details</Link></li>
                     </ul>
                     <a className={`mean-expand ${activeIcon("blog")}`} onClick={() => active("blog")}></a>
-                </li>
+                </li> 
+                <li><Link href="/about">About Us</Link></li>
                 <li><Link href="/contact">Contact</Link></li>   
             </ul>  
         </>

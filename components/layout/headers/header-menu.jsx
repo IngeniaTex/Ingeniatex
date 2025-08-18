@@ -30,11 +30,11 @@ const MainMenu = () => {
                         <li><Link href="/404">404</Link></li>
                     </ul>
                 </li>
-                <li className="menu-item-has-children"><Link href="#">Services <i className="fas fa-angle-down"></i></Link>
+                <li className="menu-item-has-children"><Link href="#">Servicios <i className="fas fa-angle-down"></i></Link>
                     <ul className="sub-menu">
                         <li><Link href="/services">Services 01</Link></li>
                         <li><Link href="/services-two">Services 02</Link></li>
-                        <li><Link href="/services/data-analytics">Services Details</Link></li>
+                        {/* <li><Link href="/services/data-analytics">Services Details</Link></li> */}
                     </ul>
                 </li>
                 <li className="menu-item-has-children"><Link href="#">Portfolio <i className="fas fa-angle-down"></i></Link>
@@ -51,7 +51,8 @@ const MainMenu = () => {
                         <li><Link href="/blog/ux-ui-designing-the-future-web-design">Blog Details</Link></li>
                     </ul>
                 </li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/about">Nosotros</Link></li>
+                <li><Link href="/contact">Contacto</Link></li>
             </ul>
         </>
     );

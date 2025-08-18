@@ -17,12 +17,13 @@ const BannerFive = () => {
                     <div className="row align-items-center gy-4 justify-content-center">
                         <div className="col-xl-7 col-lg-6">
                             <div className="banner__five-content">
-                                <span className="subtitle-one">Drive Growth</span>
-                                <h2>Next-Gen Software for Your Business</h2>
-                                <p>Embrace the latest advancements in technology with our cutting-edge software engineered to drive innovation</p>
+                                <span className="subtitle-one">Impulsa tu crecimiento </span>
+                                <h2>Soluciones digitales para tu negocio</h2>
+                                <p>Aprovecha la tecnología más avanzada con nuestros servicios de desarrollo web y 
+                                automatización, diseñados para hacer crecer tu empresa.</p>
                                 <div className="banner__five-content-bottom">
-                                    <Link href="/contact" className="btn-two">Apply Today<i className="fas fa-arrow-right"></i></Link>
-                                    <span className="banner__five-content-video-btn video-popup" onClick={openVideoModal}><i className="fas fa-play"></i></span>
+                                    <Link href="/contact" className="btn-two">Solicitar cotización<i className="fas fa-arrow-right"></i></Link>
+                                    {/* <span className="banner__five-content-video-btn video-popup" onClick={openVideoModal}><i className="fas fa-play"></i></span> */}
                                 </div>
                             </div>
                         </div>
