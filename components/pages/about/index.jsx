@@ -3,17 +3,17 @@ import SEO from "@/components/data/seo";
 import HeaderOne from "@/components/layout/headers/header/header-one";
 import BreadCrumb from "../common/breadcrumb";
 import AboutMain from "./about";
-import FooterOne from "@/components/layout/footers/footer-one";
+import FooterFive from "@/components/layout/footers/footer-five";
 import ScrollToTop from "../common/scroll/scroll-to-top";
 
 const AboutUs = () => {
     return (
       <>
-        <SEO pageTitle="About Us" />
+        <SEO pageTitle="Quiénes Somos" />
         <HeaderOne />
-        <BreadCrumb title="About Us" innerTitle="Company About" />
+        <BreadCrumb title="Quiénes Somos" innerTitle="Descubre Ingeniatex" />
         <AboutMain />
-        <FooterOne />        
+        <FooterFive />        
         <ScrollToTop />
       </>
     );

@@ -23,10 +23,10 @@ const AboutMain = () => {
                                 <i className="flaticon-consultant"></i>
                                 <div className="experience-bar-right">
                                     <div className="experience-bar-counter">
-                                        <h4 className="counter"><Count number={25}/></h4>
+                                        <h4 className="counter"><Count number={10}/></h4>
                                         <span>+</span>
                                     </div>
-                                    <span>Years Experience</span>
+                                    <span>Años de Experiencia</span>
                                 </div>
                             </div>
                             <div className="about__one-image-wrapper">
@@ -37,34 +37,36 @@ const AboutMain = () => {
                     </div>
                     <div className="col-xl-6 col-lg-7 col-md-9">
                         <div className="about__one-content">
-                            <span className="subtitle-one">About us</span>
-                            <h2>Transform Business to Technology</h2>
-                            <p>IT Technology is a broad category encompassing all aspec information technology and the application of technology in various industries. It includes areas such as software development</p>
+                            <span className="subtitle-one">Quiénes somos</span>
+                            <h2>Transformamos ideas en soluciones digitales</h2>
+                            <p>En <strong>Ingeniatex</strong> creemos que la tecnología debe estar al alcance de todas las empresas, 
+                            sin importar su tamaño. Desde Mérida, Yucatán, apoyamos a pequeñas y medianas empresas en todo México,
+                             ayudándolas a fortalecer su presencia digital, optimizar procesos y crecer con innovación.</p>
                             <div className="about__one-content-service">
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Data Management Experts</span>
+                                    <span>Desarrollo de sitios web profesionales</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Mobile App Developments</span>
+                                    <span>Aplicaciones móviles y web a la medida</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>IT Infrastructure Solutions</span>
+                                    <span>Automatización de pruebas y QA</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Data Analytics Consulting</span>
+                                    <span>Consultoría y soporte en tecnología</span>
                                 </div>
                             </div>
-                            <Link href="/about" className="btn-one">Discover More<i className="fas fa-arrow-right"></i></Link>
+                            <Link href="/services" className="btn-one">Conoce más<i className="fas fa-arrow-right"></i></Link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div className="brand__area section-padding pt-0">
+        {/* <div className="brand__area section-padding pt-0">
             <div className="container">
                 <div className="row">
                     <div className="col-xl-12">
@@ -109,9 +111,9 @@ const AboutMain = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
         <WorkArea />
-        <Testimonial />
+         {/* <Testimonial />  */}
         </>
     );
 };

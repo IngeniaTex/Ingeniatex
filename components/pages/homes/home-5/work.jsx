@@ -22,20 +22,17 @@ const WorkAreaFive = () => {
                     <div className="work-process__three-card-single">
                         <h3>01</h3>
                         <h5>Escuchamos tus ideas</h5>
-                        <p>El primer paso es conocerte: entendemos tus retos y objetivos para 
-                        transformar tu visión en un plan claro.</p>
+                        <p>Entendemos tus retos y objetivos para diseñar juntos la estrategia digital adecuada.</p>
                     </div>
                     <div className="work-process__three-card-single middle">
                         <h3>02</h3>
                         <h5>Diseñamos la solución</h5>
-                        <p>Convertimos las ideas en propuestas reales, aplicando tecnología de 
-                        vanguardia y las mejores prácticas de desarrollo.</p>
+                        <p>Transformamos tus ideas en sitios web, apps o automatizaciones hechas a la medida.</p>
                     </div>
                     <div className="work-process__three-card-single">
                         <h3>03</h3>
-                        <h5>Entregamos resultados</h5>
-                        <p>Ponemos en tus manos la solución final: funcional, intuitiva y lista 
-                        para impulsar el crecimiento de tu negocio.</p>
+                        <h5>Implementamos y damos soporte</h5>
+                        <p>Nos aseguramos de que todo funcione y te acompañamos con soporte continuo.</p>
                     </div>
                 </div>
             </div>
