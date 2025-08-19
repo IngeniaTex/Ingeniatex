@@ -23,15 +23,15 @@ const BannerFive = () => {
                                 automatización, diseñados para hacer crecer tu empresa.</p>
                                 <div className="banner__five-content-bottom flex gap-4">
                                     <Link href="/contact" className="btn-two">Solicita imfomación<i className="fas fa-arrow-right"></i></Link>
-                                    <div className="banner__four-content-call">
+                                    <div>
                                     <a 
                                         href="https://wa.me/529992798371" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="whatsapp-button"
+                                        className="whatsapp-button whatsapp-button--filled whatsapp-button--compact"
                                     >
                                         <i className="fab fa-whatsapp"></i>
-                                        <span>Soporte inmediato</span>
+                                        <span>WhatsApp</span>
                                     </a>
                                     </div>
                                     {/* <span className="banner__five-content-video-btn video-popup" onClick={openVideoModal}><i className="fas fa-play"></i></span> */}

@@ -19,12 +19,19 @@ const FooterFive = () => {
                             <Link href="/request-quote" className="btn-two">Cotiza!<i className="fas fa-arrow-right"></i></Link>
                             <div className="call-box">
                                 <div className="call-box-item">
-                                    <div className="call-box-item-icon">
+                                    {/* <div className="call-box-item-icon">
                                         <i className="flaticon-telephone-call"></i>
-                                    </div>
-                                    <div className="call-box-item-info">
-                                        <span>Llamanos</span>
-                                        <Link href="tel:999 555-0133">(307) 555-0133</Link>
+                                    </div> */}
+                                    <div>
+                                    <a 
+                                        href="https://wa.me/529992798371" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="whatsapp-button whatsapp-button--dark whatsapp-button--compact"
+                                    >
+                                        <i className="fab fa-whatsapp"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
                                     </div>
                                 </div>
                             </div>

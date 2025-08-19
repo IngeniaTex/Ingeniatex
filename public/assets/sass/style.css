@@ -4436,38 +4436,67 @@ Responsive Menu Css
   z-index: 3;
 }
 
-/* Botón de WhatsApp compacto */
-.whatsapp-button {
-  display: flex;
-  align-items: center;
-  border: 2px solid #25D366;   /* Verde oficial de WhatsApp */
-  color: #25D366;              /* Texto verde */
-  padding: 0.4rem 0.8rem;
-  border-radius: 50px;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 700;            /* Texto en negrita */
-  text-decoration: none;
-  transition: all 0.3s ease;
-  text-align: left;
-  line-height: 1.2;            /* Permite que el texto se divida en dos líneas */
-}
-
-.whatsapp-button i {
-  font-size: 1.8rem;
-  margin-right: 0.5rem;
-  color: #25D366;              /* Ícono siempre verde */
-}
-
-/* Hover */
-.whatsapp-button:hover {
-  background-color: #25D366;   /* Fondo verde al hover */
-  color: #ffffff;              /* Texto blanco */
-}
-
-.whatsapp-button:hover i {
-  color: #25D366;              /* Ícono se mantiene verde en hover */
-}
+/* =========================================
+   WhatsApp Button – Base styles
+   ========================================= */
+   .whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 2px solid #25D366;
+  }
+  
+  /* Icon inherits current text color (fixes opposite-color issue) */
+  .whatsapp-button i {
+    font-size: 1.6rem;
+    color: inherit;
+  }
+  
+  /* =========================================
+     Variant A (default): Green-filled
+     - Default: solid green background, white text/icon
+     - Hover: transparent background (outline), green text/icon
+     ========================================= */
+  .whatsapp-button--filled {
+    background-color: #25D366;
+    color: #ffffff;
+  }
+  
+  .whatsapp-button--filled:hover {
+    background-color: transparent;
+    color: #25D366;
+  }
+  
+  /* =========================================
+     Variant B (dark sections): Outline for dark BG
+     - Default: transparent background, white text/icon, white border
+     - Hover: solid green with white text/icon
+     ========================================= */
+  .whatsapp-button--dark {
+    background-color: transparent;
+    color: #25D366;
+    border-color: #25D366;
+  }
+  
+  .whatsapp-button--dark:hover {
+    background-color: #25D366;
+    color: #ffffff;
+    border-color: #25D366;
+  }
+  
+  /* (Optional) Compact width if you need a shorter button */
+  .whatsapp-button--compact {
+    max-width: 170px;
+    text-align: left;
+    white-space: normal; /* allows two-line label */
+  }
 
 @media (max-width: 991px) {
   .banner__four {
