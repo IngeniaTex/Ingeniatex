@@ -2,7 +2,7 @@
 import SEO from "@/components/data/seo";
 import HeaderOne from "@/components/layout/headers/header/header-one";
 import BreadCrumb from "../common/breadcrumb";
-import FooterOne from "@/components/layout/footers/footer-one";
+import FooterOne from "@/components/layout/footers/footer-five";
 import ScrollToTop from "../common/scroll/scroll-to-top";
 import FormArea from "./form";
 

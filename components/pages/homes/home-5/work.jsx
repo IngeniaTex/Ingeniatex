@@ -9,8 +9,8 @@ const WorkAreaFive = () => {
             <div className="container">
                 <div className="row justify-content-center text-center mb-50">
                     <div className="col-xl-6 col-lg-7 col-md-9">
-                        <span className="subtitle-one">Work Process</span>
-                        <h2>Workflow Journey</h2>
+                        <span className="subtitle-one">Nuestro proceso</span>
+                        <h2>Así trabajamos contigo</h2>
                     </div>
                 </div>
                 <div className="work-process__three-card">
@@ -21,18 +21,21 @@ const WorkAreaFive = () => {
                     </div>
                     <div className="work-process__three-card-single">
                         <h3>01</h3>
-                        <h5>Idea Generation</h5>
-                        <p>Creativity at this initial stage, we focus on understanding your unique challenge</p>
+                        <h5>Escuchamos tus ideas</h5>
+                        <p>El primer paso es conocerte: entendemos tus retos y objetivos para 
+                        transformar tu visión en un plan claro.</p>
                     </div>
                     <div className="work-process__three-card-single middle">
                         <h3>02</h3>
-                        <h5>Solution Development</h5>
-                        <p>Transitioning from ideas to actionable solutions, our experts employ cutting-edge technologies</p>
+                        <h5>Diseñamos la solución</h5>
+                        <p>Convertimos las ideas en propuestas reales, aplicando tecnología de 
+                        vanguardia y las mejores prácticas de desarrollo.</p>
                     </div>
                     <div className="work-process__three-card-single">
                         <h3>03</h3>
-                        <h5>Outcome Delivery</h5>
-                        <p>The culmination of our process, outcome delivery, is where plans become reality.</p>
+                        <h5>Entregamos resultados</h5>
+                        <p>Ponemos en tus manos la solución final: funcional, intuitiva y lista 
+                        para impulsar el crecimiento de tu negocio.</p>
                     </div>
                 </div>
             </div>

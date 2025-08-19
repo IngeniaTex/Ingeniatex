@@ -4436,6 +4436,39 @@ Responsive Menu Css
   z-index: 3;
 }
 
+/* Botón de WhatsApp compacto */
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  border: 2px solid #25D366;   /* Verde oficial de WhatsApp */
+  color: #25D366;              /* Texto verde */
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;            /* Texto en negrita */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: left;
+  line-height: 1.2;            /* Permite que el texto se divida en dos líneas */
+}
+
+.whatsapp-button i {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+  color: #25D366;              /* Ícono siempre verde */
+}
+
+/* Hover */
+.whatsapp-button:hover {
+  background-color: #25D366;   /* Fondo verde al hover */
+  color: #ffffff;              /* Texto blanco */
+}
+
+.whatsapp-button:hover i {
+  color: #25D366;              /* Ícono se mantiene verde en hover */
+}
+
 @media (max-width: 991px) {
   .banner__four {
     padding: 80px 0;

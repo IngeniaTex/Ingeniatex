@@ -21,11 +21,11 @@ const HomeFive = () => {
             <BannerFive />
             <AboutFive />
             <WorkAreaFive />
-            <Solution />
+            {/* <Solution /> */}
             <ServicesFive />
             <Choose />
-            <TestimonialFive />
-            <BlogFive />
+            {/* <TestimonialFive />
+            <BlogFive /> */}
             <FooterFive />
             <ScrollToTop />
         </div>

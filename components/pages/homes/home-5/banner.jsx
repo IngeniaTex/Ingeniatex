@@ -21,8 +21,19 @@ const BannerFive = () => {
                                 <h2>Soluciones digitales para tu negocio</h2>
                                 <p>Aprovecha la tecnología más avanzada con nuestros servicios de desarrollo web y 
                                 automatización, diseñados para hacer crecer tu empresa.</p>
-                                <div className="banner__five-content-bottom">
-                                    <Link href="/contact" className="btn-two">Solicitar cotización<i className="fas fa-arrow-right"></i></Link>
+                                <div className="banner__five-content-bottom flex gap-4">
+                                    <Link href="/contact" className="btn-two">Solicita imfomación<i className="fas fa-arrow-right"></i></Link>
+                                    <div className="banner__four-content-call">
+                                    <a 
+                                        href="https://wa.me/529992798371" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="whatsapp-button"
+                                    >
+                                        <i className="fab fa-whatsapp"></i>
+                                        <span>Soporte inmediato</span>
+                                    </a>
+                                    </div>
                                     {/* <span className="banner__five-content-video-btn video-popup" onClick={openVideoModal}><i className="fas fa-play"></i></span> */}
                                 </div>
                             </div>

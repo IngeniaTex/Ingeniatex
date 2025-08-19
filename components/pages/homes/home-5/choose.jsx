@@ -16,10 +16,12 @@ const Choose = () => {
                     <div className="col-xl-5 col-lg-7 col-md-9">
                         <div className="why-choose-us__four-left">
                             <div className="why-choose-us__four-title">
-                                <span className="subtitle-one">Why Chose Us</span>
-                                <h2>Bantec Your Trusted IT Partner</h2>
-                                <p>Our expertise, we ensure your business stays ahead in the digital landscape, driving success and growth together</p>
-                                <div className="why-choose-us__four-progress-bar">
+                                <span className="subtitle-one">¿Por qué elegirnos?</span>
+                                <h2>Ingeniatex, tu aliado digital de confianza</h2>
+                                <p>Con nuestra experiencia en desarrollo web, automatización y soluciones 
+        digitales, te ayudamos a mantener tu negocio un paso adelante en el 
+        mundo tecnológico, generando resultados reales y crecimiento sostenido.</p>
+                               {/*  <div className="why-choose-us__four-progress-bar">
                                     <div className="why-choose-us__four-progress-bar-wrapper">
                                         <div className="single-progress-bar">
                                             <span>75%</span>
@@ -32,7 +34,7 @@ const Choose = () => {
                                         </div>
                                         <h3>Branching</h3>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

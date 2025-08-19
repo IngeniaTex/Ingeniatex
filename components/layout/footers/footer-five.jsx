@@ -8,7 +8,32 @@ import servicesData from "@/components/data/services-data";
 const FooterFive = () => {
     return (
         <>
-		<div className="subscribe__one three">
+		<div className="subscribe__one two">
+            <div className="container">
+                <div className="row justify-content-center text-center subscribe__one-content" style={{backgroundImage: `url(${ctaBg.src})`}}>
+                    <div className="col-xl-7 col-lg-8">
+                        <div className="subscribe__one-title">
+                            <h3>Activa tu potencial hoy mismo</h3>
+                        </div>
+                        <div className="subscribe-bottom">
+                            <Link href="/request-quote" className="btn-two">Cotiza!<i className="fas fa-arrow-right"></i></Link>
+                            <div className="call-box">
+                                <div className="call-box-item">
+                                    <div className="call-box-item-icon">
+                                        <i className="flaticon-telephone-call"></i>
+                                    </div>
+                                    <div className="call-box-item-info">
+                                        <span>Llamanos</span>
+                                        <Link href="tel:999 555-0133">(307) 555-0133</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		{/* <div className="subscribe__one three">
 			<img src={subscribe.src} className="subscribe__three-shape" alt="image" />
 			<div className="container">
 				<div className="row justify-content-center text-center subscribe__one-content" style={{backgroundImage: `url(${ctaBg.src})`}}>
@@ -24,7 +49,7 @@ const FooterFive = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> */}
 		<div className="footer__five">
 			<div className="container pb-80">
 				<div className="row gy-4 justify-content-between">
@@ -32,7 +57,7 @@ const FooterFive = () => {
 						<div className="footer__five-widget">
 							<div className="footer__five-widget-about">
 								<Link href="/"><img src={logo.src} alt="image" /></Link>
-								<p>Financial planners help people to gain knowledge about</p>
+								<p>En Ingeniatex creamos soluciones digitales diseñadas para impulsar el crecimiento de tu empresa.</p>
 								<div className="footer__five-widget-about-social">
 									<Social />
 								</div>
@@ -41,13 +66,13 @@ const FooterFive = () => {
 					</div>
 					<div className="col-xl-3 col-md-6 col-sm-5 sm-mb-30">
 						<div className="footer__five-widget border-one">
-							<h4 className="ml-60">Resources​</h4>
+							<h4 className="ml-60">Recursos</h4>
 							<div className="footer__five-widget-solution ml-60">
 								<ul>
-									<li><Link href="/services"><i className="far fa-chevron-double-right"></i>Service</Link></li>
-									<li><Link href="/faq"><i className="far fa-chevron-double-right"></i>FAQ</Link></li>
-									<li><Link href="/testimonial"><i className="far fa-chevron-double-right"></i>Testimonial</Link></li>
-									<li><Link href="/about"><i className="far fa-chevron-double-right"></i>About Us</Link></li>
+									{/* <li><Link href="/services"><i className="far fa-chevron-double-right"></i>Servicios</Link></li> */}
+									<li><Link href="/faq"><i className="far fa-chevron-double-right"></i>Preguntas frecuentes</Link></li>
+									{/* <li><Link href="/testimonial"><i className="far fa-chevron-double-right"></i>Testimonios</Link></li> */}
+									<li><Link href="/about"><i className="far fa-chevron-double-right"></i>Sobre nosotros</Link></li>
 								</ul>
 							</div>
 						</div>
@@ -59,7 +84,7 @@ const FooterFive = () => {
 								<ul>
 									{servicesData.slice(0, 4).map((data, id) => {
 										const words = data.title.split(' ');
-										const firstAndSecondWord = words.slice(0, 2).join(' ');
+										const firstAndSecondWord = words.slice(0, 3).join(' ');
 										return (
 											<li key={id}><Link href={`/services/${data.id}`}><i className="far fa-chevron-double-right"></i>{firstAndSecondWord}</Link></li>
 										);
@@ -72,14 +97,14 @@ const FooterFive = () => {
 						<div className="footer__five-widget border-one">
 							<h4>Contact</h4>
 							<div className="footer__five-widget-location">
-								<p>Call now for expert assistance with our software solutions</p>
+								<p>Contáctanos para recibir asesoría experta en nuestras soluciones digitales.</p>
 								<div className="footer__five-widget-location-item">
 									<div className="footer__five-widget-location-item-icon">
 										<i className="flaticon-telephone-call"></i>
 									</div>
 									<div className="footer__five-widget-location-item-info email">
-										<span>Make a call</span>
-										<Link href="tel:+09(307)555-0133">+09 (307) 555-0133</Link>
+										<span>Llámanos</span>
+										<Link href="tel:+09(307)555-0133">+52 999-279-8371</Link>
 									</div>
 								</div>
 							</div>
@@ -92,13 +117,13 @@ const FooterFive = () => {
 					<div className="row justify-content-between copyright__one-container-area">
 						<div className="col-xl-5 col-lg-6"> 
 							<div className="copyright__one-left">
-								<p>© Ingeniatex 2025 | All Rights Reserved</p>
+								<p>© Ingeniatex 2025 | Todos los derechos reservados</p>
 							</div>
 						</div>
 						<div className="col-xl-5 col-lg-6">
 							<div className="copyright__one-right">
-								<Link href="/about">Privacy Policy</Link>
-								<Link href="/contact">Contact Us</Link>
+								<Link href="/about">Política de privacidad</Link>
+								<Link href="/contact">Contáctanos</Link>
 							</div>
 						</div>
 					</div>
