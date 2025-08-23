@@ -3,17 +3,17 @@ import SEO from '@/components/data/seo';
 import HeaderOne from '@/components/layout/headers/header/header-one';
 import BreadCrumb from '../common/breadcrumb';
 import RequestQuoteMain from './request-quote';
-import FooterOne from '@/components/layout/footers/footer-one';
+import Footerfive from '@/components/layout/footers/footer-five';
 import ScrollToTop from '../common/scroll/scroll-to-top';
 
 const RequestQuotePage = () => {
     return (
         <>
-            <SEO pageTitle="Request Quote" />
+            <SEO pageTitle="Cotizaciòn" />
             <HeaderOne />
-            <BreadCrumb title="Request Quote" innerTitle="Request Quote" />
+            <BreadCrumb title="Solicitar Cotización" innerTitle="Información de Servicios" />
             <RequestQuoteMain />
-            <FooterOne />
+            <Footerfive />
             <ScrollToTop />
         </>
     );

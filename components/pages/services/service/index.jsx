@@ -5,7 +5,7 @@ import BreadCrumb from "../../common/breadcrumb";
 import ServicesMain from "./services";
 import WorkArea from "../../homes/home/work";
 import Testimonial from "../../homes/home/testimonial";
-import FooterOne from "@/components/layout/footers/footer-one";
+import FooterSix from "@/components/layout/footers/footer-six";
 import ScrollToTop from "../../common/scroll/scroll-to-top";
 
 const ServicePage = () => {
@@ -16,8 +16,8 @@ const ServicePage = () => {
             <BreadCrumb title="Our Services" innerTitle="Our Services" />
             <ServicesMain />
             <WorkArea />
-            <Testimonial />
-            <FooterOne />
+            {/* <Testimonial /> */}
+            <FooterSix />
             <ScrollToTop />
         </>
     );

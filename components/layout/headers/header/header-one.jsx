@@ -24,7 +24,7 @@ const HeaderOne = ({variant}) => {
     }, []);
     return (
         <>
-        <div className="top__bar">
+        {/* <div className="top__bar">
             <div className="container">
                 <div className="row">
                     <div className="col-xl-7 col-md-7">
@@ -40,7 +40,7 @@ const HeaderOne = ({variant}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
         <div className={`header__area ${ variant ? variant : "" } header__sticky ${isSticky ? "header__sticky-sticky-menu" : ""}`}>
             <div className="container">
                 <div className="header__area-menubar">
@@ -71,7 +71,7 @@ const HeaderOne = ({variant}) => {
                                 </div>
                             </div>
                             <div className="header__area-menubar-right-box-btn">
-                                <Link className="btn-one" href="/request-quote">Get Quote<i className="fas fa-arrow-right"></i></Link>
+                                <Link className="btn-one" href="/request-quote">Solicitar Cotización<i className="fas fa-arrow-right"></i></Link>
                             </div>
                         <div className="header__area-menubar-right-responsive-menu menu__bar">
                             <i className="flaticon-menu-1" onClick={() => setMenuSidebar(true)}></i>
