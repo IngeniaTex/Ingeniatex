@@ -21,7 +21,7 @@ const ServicesSingleMain = ({firstAndSecondWord}) => {
                             <h2>Reach New Heights with {firstAndSecondWord}</h2>
                             <p>Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any websitet in on visitors.Web designing in a powerful way of just not an only profession Web designing in a powerful way of just not an only passion for our Company. We have to a tendency to believe the idea that</p>
     
-                            <h3 className="sub-heading">Transform Your Brand's Digital Future</h3>
+                            <h3 className="sub-heading">Transform Your Brand&apos;s Digital Future</h3>
                             <p>Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any websitet in on visitors.Web designing in a powerful way of just not an only profession Web designing in a powerful way of just not an only Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any websitet in on visitors.Web designing in a powerful way of just not an only profession</p>
     
                             <div className="service__details-content-box">

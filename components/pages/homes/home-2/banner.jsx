@@ -74,7 +74,7 @@ const BannerTwo = () => {
 									<div className="col-xl-5 col-lg-10 col-md-8">
 										<div className="banner__two-content">
 											<h2>Pioneering Progress One Algorithm</h2>
-											<p>We believe in pushing the boundaries of what's possible. our pioneering spirit drives us to develop algorithms</p>
+											<p>We believe in pushing the boundaries of what&apos;s possible. our pioneering spirit drives us to develop algorithms</p>
 											<Link href="/contact" className="btn-two">Get Started<i className="fas fa-arrow-right"></i></Link>
 										</div>
 									</div>

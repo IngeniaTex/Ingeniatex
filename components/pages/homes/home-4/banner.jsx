@@ -12,7 +12,7 @@ const BannerFour = () => {
                             <div className="banner__four-content">
                                 <span className="subtitle-two">Innovating The Future</span>
                                 <h2>Transforming Ideas into Reality</h2>
-                                <p>Showcases the company's ability to bring innovative concepts to life. Indicates a broader focus beyond just technical.</p>
+                                <p>Showcases the company&apos;s ability to bring innovative concepts to life. Indicates a broader focus beyond just technical.</p>
                                 <div className="banner__four-content-bottom">
                                     <Link href="/contact" className="btn-two">Apply Today<i className="fas fa-arrow-right"></i></Link>
                                     <div className="banner__four-content-call">

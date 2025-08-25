@@ -53,7 +53,7 @@ const TeamSingleMain = ({teamDetails}) => {
                         <div className="team__details-right ml-20 xl-ml-0">
                             <div className="team__details-right-experience">
                                 <h3>Career Guidelines</h3>
-                                <p>This involves assessing one's skills, interests, values, and personality traits to identify suitable career paths. Self-assessment can be done through career tests, online resources, or working with a career counselor.</p>
+                                <p>This involves assessing one&apos;s skills, interests, values, and personality traits to identify suitable career paths. Self-assessment can be done through career tests, online resources, or working with a career counselor.</p>
                                 <p>Employers look for candidates with specific skills and abilities. Individuals should focus on developing the skills and competencies needed for their desired career through education, training, and work experience.</p>
                                 <p>Different careers require different levels of education and training. Individuals should research the educational requirements for their desired career and develop a plan to acquire the necessary education and credentials. Continuing education and professional development.</p>
                             </div>
