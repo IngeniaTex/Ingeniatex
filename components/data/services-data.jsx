@@ -5,12 +5,12 @@ const servicesData = [
       title: 'Páginas web profesionales',
       des: 'Sitios modernos, rápidos y listos para convertir en 7–10 días.',
     },
-    /* {
+    {
       id: 'apps-web',
       icon: <i className="flaticon-mobile-app"></i>,
       title: 'Aplicaciones web a medida',
       des: 'Funcionalidades personalizadas, panel de administración y roles.',
-    }, */
+    },
     {
       id: 'qa-automation',
       icon: <i className="flaticon-data-scientist"></i>,

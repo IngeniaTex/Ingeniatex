@@ -5,7 +5,7 @@ const MainMenu = () => {
         <>
             <ul>
                 <li className="menu-item-has-children">
-                    <Link href="/home-five">Home</Link>
+                    <Link href="/">Home</Link>
                    {/*  <ul className="sub-menu">
                         <li><Link href="/">Home 01</Link></li>
                         <li><Link href="/home-two">Home 02</Link></li>
