@@ -16,7 +16,7 @@ const HomeFive = () => {
 
     return (
         <div>
-            <SEO pageTitle='Software Solutions' />
+            <SEO pageTitle='Ingeniatex' />
             <HeaderFive />
             <BannerFive />
             <AboutFive />
