@@ -12,16 +12,16 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 					<img className='logo_one' src={logo2.src} alt="logo" />
 				</Link>
 				</div>
-				<p>The insurance company assumes the financial risk of covering these events in exchange for the premiums paid by the policyholder. There are many different types of insurance,</p>
+				<p>En Ingeniatex asumimos el compromiso de brindar soluciones digitales confiables y accesibles para tu empresa. Nos especializamos en el desarrollo de sitios web, aplicaciones, automatización de pruebas y consultoría tecnológica para ayudar a las empresas a crecer en un entorno cada vez más digital.</p>
 				<div className="header__area-menubar-right-sidebar-popup-contact">
-					<h4 className="mb-30">Get In Touch</h4>
+					<h4 className="mb-30">Ponte en contacto</h4>
 					<div className="header__area-menubar-right-sidebar-popup-contact-item">
 						<div className="header__area-menubar-right-sidebar-popup-contact-item-icon">
 							<i className="fal fa-phone-alt icon-animation"></i>
 						</div>
 						<div className="header__area-menubar-right-sidebar-popup-contact-item-content">
-							<span>Call Now</span>
-							<h6><Link href="tel:+125(895)658568">+125 (895) 658 568</Link></h6>
+							<span>Llamanos</span>
+							<h6><Link href="+52(999)2798371">+52 (999) 279 8371</Link></h6>
 						</div>
 					</div>
 					<div className="header__area-menubar-right-sidebar-popup-contact-item">
@@ -29,8 +29,8 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 							<i className="fal fa-envelope"></i>
 						</div>
 						<div className="header__area-menubar-right-sidebar-popup-contact-item-content">
-							<span>Quick Email</span>
-							<h6><Link href="mailto:info.help@gmail.com">info.help@gmail.com</Link></h6>
+							<span>Correo electrónico</span>
+							<h6><Link href="mailto:info.help@gmail.com">info@ingeniatex.com</Link></h6>
 						</div>
 					</div>
 					<div className="header__area-menubar-right-sidebar-popup-contact-item">
@@ -38,8 +38,8 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 							<i className="fal fa-map-marker-alt"></i>
 						</div>
 						<div className="header__area-menubar-right-sidebar-popup-contact-item-content">
-							<span>Office Address</span>
-							<h6><Link href="https://google.com/maps" target="_blank">PV3M+X68 Welshpool United Kingdom</Link></h6>
+							<span>Dirección de oficina</span>
+							<h6><Link href="https://google.com/maps" target="_blank">Mérida Yucatán, México</Link></h6>
 						</div>
 					</div>
 				</div>
