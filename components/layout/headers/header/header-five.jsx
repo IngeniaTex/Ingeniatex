@@ -36,7 +36,7 @@ const HeaderFive = ({variant}) => {
                     <div className="header__area-menubar-right">
                         <div className="header__area-menubar-right-box">
                             <div className="header__area-menubar-right-box-btn">
-                                <Link className="btn-one" href="/request-quote">Get Started<i className="fas fa-arrow-right"></i></Link>
+                                <Link className="btn-one" href="/request-quote">Solicitar Cotización<i className="fas fa-arrow-right"></i></Link>
                             </div>
                             <div className="header__area-menubar-right-responsive-menu menu__bar">
                                 <i className="flaticon-menu-1" onClick={() => setMenuSidebar(true)}></i>

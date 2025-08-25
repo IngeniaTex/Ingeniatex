@@ -1,12 +1,4 @@
-/*------------------------------------------------------------------------
-
-Template Name:  Bantec - IT Service & Technology HTML5 Template
-Author:  ThemeOri
-Author URI: http://themeori.com
-Version: 1.0.2
-Description: This Template is created for web template
-
---------------------------------------------------------------------------
+/*--------------------------------------------------------------------------
 TABLE OF CONTENTS
 --------------------------------------------------------------------------
 
@@ -14,12 +6,12 @@ TABLE OF CONTENTS
 * Common CSS
 * Form CSS
 * Hedging CSS
-* Bantec Button And Title Styles CSS
+*  Button And Title Styles CSS
 * Highlighted Text Styles
 * Scroll Top CSS
 * Preloader CSS
 * Animation CSS
-* Bantec Color CSS
+*  Color CSS
 * Space And Container CSS
 * Top Bar CSS
 * Menu Bar Sticky CSS
@@ -389,7 +381,7 @@ p {
   }
 }
 /*==========================================================================
-* Bantec Button And Title Styles CSS
+* Button And Title Styles CSS
 ==========================================================================*/
 .subtitle-one,
 .subtitle-two,
@@ -1050,7 +1042,7 @@ p {
 }
 
 /*==========================================================================
-* Bantec Color CSS
+*  Color CSS
 ==========================================================================*/
 :root {
   --body-font: "Space Grotesk", sans-serif;
@@ -3256,7 +3248,7 @@ p {
   display: inline-block;
 }
 .header__area-menubar-left-logo a img {
-  max-width: 165px;
+  max-width: 200px;
   position: relative;
   z-index: 9999;
 }
@@ -4435,6 +4427,68 @@ Responsive Menu Css
 .banner__four-image-wrapper img {
   z-index: 3;
 }
+
+/* =========================================
+   WhatsApp Button – Base styles
+   ========================================= */
+   .whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 2px solid #25D366;
+  }
+  
+  /* Icon inherits current text color (fixes opposite-color issue) */
+  .whatsapp-button i {
+    font-size: 1.6rem;
+    color: inherit;
+  }
+  
+  /* =========================================
+     Variant A (default): Green-filled
+     - Default: solid green background, white text/icon
+     - Hover: transparent background (outline), green text/icon
+     ========================================= */
+  .whatsapp-button--filled {
+    background-color: #25D366;
+    color: #ffffff;
+  }
+  
+  .whatsapp-button--filled:hover {
+    background-color: transparent;
+    color: #25D366;
+  }
+  
+  /* =========================================
+     Variant B (dark sections): Outline for dark BG
+     - Default: transparent background, white text/icon, white border
+     - Hover: solid green with white text/icon
+     ========================================= */
+  .whatsapp-button--dark {
+    background-color: transparent;
+    color: #25D366;
+    border-color: #25D366;
+  }
+  
+  .whatsapp-button--dark:hover {
+    background-color: #25D366;
+    color: #ffffff;
+    border-color: #25D366;
+  }
+  
+  /* (Optional) Compact width if you need a shorter button */
+  .whatsapp-button--compact {
+    max-width: 170px;
+    text-align: left;
+    white-space: normal; /* allows two-line label */
+  }
 
 @media (max-width: 991px) {
   .banner__four {
@@ -9851,6 +9905,10 @@ Responsive Menu Css
 ==========================================================================*/
 .subscribe__one {
   margin-bottom: -128px;
+}
+.subscribe__one_blue {
+  margin-bottom: -128px;
+  background: #051634;
 }
 .subscribe__one-content {
   background-color: var(--primary-color-1);

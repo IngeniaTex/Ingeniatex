@@ -25,7 +25,8 @@ const ServicesFive = () => {
                                         <div className="services__five-single-service-content">
                                             <h4>{firstAndSecondWord}</h4>
                                             <p>{data.des}</p>
-                                            <Link href={`/services/${data.id}`} className="btn-three">Read More<i className="fas fa-chevron-right"></i></Link>
+                                            <Link href={`/services`} className="btn-three">Read More<i className="fas fa-chevron-right"></i></Link>
+                                            {/* <Link href={`/services/${data.id}`} className="btn-three">Read More<i className="fas fa-chevron-right"></i></Link> */}
                                         </div>
                                     </div>
                                 </div>

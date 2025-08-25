@@ -16,16 +16,16 @@ const HomeFive = () => {
 
     return (
         <div>
-            <SEO pageTitle='Software Solutions' />
+            <SEO pageTitle='Ingeniatex' />
             <HeaderFive />
             <BannerFive />
             <AboutFive />
             <WorkAreaFive />
-            <Solution />
+            {/* <Solution /> */}
             <ServicesFive />
             <Choose />
-            <TestimonialFive />
-            <BlogFive />
+            {/* <TestimonialFive />
+            <BlogFive /> */}
             <FooterFive />
             <ScrollToTop />
         </div>

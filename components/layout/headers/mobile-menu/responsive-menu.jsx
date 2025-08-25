@@ -16,17 +16,17 @@ const ResponsiveMenu = () => {
         <>
             <ul>
                 <li className='menu-item-has-children'>
-                    <Link href='#'>Home</Link>
-                    <ul className='sub-menu' style={activeSubMenu("home")}>
+                    <Link href='/'>Home</Link>
+                  {/*   <ul className='sub-menu' style={activeSubMenu("home")}>
                         <li><Link href="/">Home 01</Link></li>
                         <li><Link href="/home-two">Home 02</Link></li>
                         <li><Link href="/home-three">Home 03</Link></li>
                         <li><Link href="/home-four">Home 04</Link></li>
                         <li><Link href="/home-five">Home 05</Link></li>
-                    </ul>
-                    <a className={`mean-expand ${activeIcon("home")}`} onClick={() => active("home")}></a>
+                    </ul> 
+                    <a className={`mean-expand ${activeIcon("home")}`} onClick={() => active("home")}></a>*/}
                 </li>  
-                <li className='menu-item-has-children'>
+                {/* <li className='menu-item-has-children'>
                     <Link href='#'>Pages</Link>
                     <ul className='sub-menu' style={activeSubMenu("pages")}>
                         <li><Link href="/about">About Us</Link></li>
@@ -43,23 +43,23 @@ const ResponsiveMenu = () => {
                             <li><Link href="/404">404</Link></li>
                         </ul>
                     <a className={`mean-expand ${activeIcon("pages")}`} onClick={() => active("pages")}></a>
-                </li>
-                <li className='menu-item-has-children'><Link href='#'>Services</Link>
-                    <ul className='sub-menu' style={activeSubMenu("services")}>
+                </li>  */}
+                <li className='menu-item-has-children'><Link href='#'>Servicios</Link>
+                    {/* <ul className='sub-menu' style={activeSubMenu("services")}>
                         <li><Link href="/services">Services 01</Link></li>
                         <li><Link href="/services-two">Services 02</Link></li>
                         <li><Link href="/services/data-analytics">Services Details</Link></li>
                     </ul>
-                    <a className={`mean-expand ${activeIcon("services")}`} onClick={() => active("services")}></a>
+                    <a className={`mean-expand ${activeIcon("services")}`} onClick={() => active("services")}></a> */}
                 </li>
-                <li className='menu-item-has-children'><Link href='#'>Project</Link>
+                {/* <li className='menu-item-has-children'><Link href='#'>Project</Link>
                     <ul className='sub-menu' style={activeSubMenu("project")}>
                         <li><Link href="/portfolio/2-columns">2 Columns</Link></li>
                         <li><Link href="/portfolio/3-columns">3 Columns</Link></li>
                         <li><Link href="/portfolio/gateway-integration">Portfolio Details</Link></li>
                     </ul>
                     <a className={`mean-expand ${activeIcon("project")}`} onClick={() => active("project")}></a>
-                </li>
+                </li>  
                 <li className='menu-item-has-children'><Link href='#'>Blog</Link>
                     <ul className='sub-menu' style={activeSubMenu("blog")}>
                         <li><Link href="/blog">Blog Grid</Link></li>
@@ -67,8 +67,9 @@ const ResponsiveMenu = () => {
                         <li><Link href="/blog/ux-ui-designing-the-future-web-design">Blog Details</Link></li>
                     </ul>
                     <a className={`mean-expand ${activeIcon("blog")}`} onClick={() => active("blog")}></a>
-                </li>
-                <li><Link href="/contact">Contact</Link></li>   
+                </li> */}
+                <li><Link href="/about">Nosotros</Link></li>
+                <li><Link href="/request-quote">Contacto</Link></li>   
             </ul>  
         </>
     );

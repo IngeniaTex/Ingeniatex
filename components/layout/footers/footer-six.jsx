@@ -5,41 +5,9 @@ import subscribe from "../../../public/assets/img/subscribe/subscribe-three-shap
 import ctaBg from "../../../public/assets/img/subscribe/subscribe-three-bg.png";
 import servicesData from "@/components/data/services-data";
 
-const FooterFive = () => {
+const FooterSix = () => {
     return (
         <>
-		<div className="subscribe__one two">
-            <div className="container">
-                <div className="row justify-content-center text-center subscribe__one-content" style={{backgroundImage: `url(${ctaBg.src})`}}>
-                    <div className="col-xl-7 col-lg-8">
-                        <div className="subscribe__one-title">
-                            <h3>Activa tu potencial hoy mismo</h3>
-                        </div>
-                        <div className="subscribe-bottom">
-                            <Link href="/request-quote" className="btn-two">Cotiza!<i className="fas fa-arrow-right"></i></Link>
-                            <div className="call-box">
-                                <div className="call-box-item">
-                                    {/* <div className="call-box-item-icon">
-                                        <i className="flaticon-telephone-call"></i>
-                                    </div> */}
-                                    <div>
-                                    <a 
-                                        href="https://wa.me/529992798371" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="whatsapp-button whatsapp-button--dark whatsapp-button--compact"
-                                    >
-                                        <i className="fab fa-whatsapp"></i>
-                                        <span>WhatsApp</span>
-                                    </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 		{/* <div className="subscribe__one three">
 			<img src={subscribe.src} className="subscribe__three-shape" alt="image" />
 			<div className="container">
@@ -141,4 +109,4 @@ const FooterFive = () => {
     );
 };
 
-export default FooterFive;
+export default FooterSix;

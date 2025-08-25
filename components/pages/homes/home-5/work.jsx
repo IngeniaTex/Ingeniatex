@@ -9,8 +9,8 @@ const WorkAreaFive = () => {
             <div className="container">
                 <div className="row justify-content-center text-center mb-50">
                     <div className="col-xl-6 col-lg-7 col-md-9">
-                        <span className="subtitle-one">Work Process</span>
-                        <h2>Workflow Journey</h2>
+                        <span className="subtitle-one">Nuestro proceso</span>
+                        <h2>Así trabajamos contigo</h2>
                     </div>
                 </div>
                 <div className="work-process__three-card">
@@ -21,18 +21,18 @@ const WorkAreaFive = () => {
                     </div>
                     <div className="work-process__three-card-single">
                         <h3>01</h3>
-                        <h5>Idea Generation</h5>
-                        <p>Creativity at this initial stage, we focus on understanding your unique challenge</p>
+                        <h5>Escuchamos tus ideas</h5>
+                        <p>Entendemos tus retos y objetivos para diseñar juntos la estrategia digital adecuada.</p>
                     </div>
                     <div className="work-process__three-card-single middle">
                         <h3>02</h3>
-                        <h5>Solution Development</h5>
-                        <p>Transitioning from ideas to actionable solutions, our experts employ cutting-edge technologies</p>
+                        <h5>Diseñamos la solución</h5>
+                        <p>Transformamos tus ideas en sitios web, apps o automatizaciones hechas a la medida.</p>
                     </div>
                     <div className="work-process__three-card-single">
                         <h3>03</h3>
-                        <h5>Outcome Delivery</h5>
-                        <p>The culmination of our process, outcome delivery, is where plans become reality.</p>
+                        <h5>Implementamos y damos soporte</h5>
+                        <p>Nos aseguramos de que todo funcione y te acompañamos con soporte continuo.</p>
                     </div>
                 </div>
             </div>
