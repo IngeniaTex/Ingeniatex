@@ -25,7 +25,7 @@ const BannerFive = () => {
                                     <Link href="/contact" className="btn-two">Solicita imfomación<i className="fas fa-arrow-right"></i></Link>
                                     <div>
                                     <a 
-                                        href="https://wa.me/529992798371" 
+                                        href="https://wa.me/529997488654" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
                                         className="whatsapp-button whatsapp-button--filled whatsapp-button--compact"
