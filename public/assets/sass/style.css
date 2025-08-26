@@ -3487,6 +3487,7 @@ p {
   transition: 0.5s;
   padding: 100px 40px;
   scrollbar-width: none;
+  text-transform: none;
 }
 .header__area-menubar-right-sidebar-popup::-webkit-scrollbar {
   display: none;
@@ -5153,6 +5154,7 @@ Responsive Menu Css
 .about__five-content p {
   color: var(--color-2);
   margin-bottom: 30px;
+  text-transform: none;
 }
 .about__five-content-service {
   margin-bottom: 30px;

@@ -24,7 +24,7 @@ const FooterFive = () => {
                                     </div> */}
                                     <div>
                                     <a 
-                                        href="https://wa.me/529992798371" 
+                                        href="https://wa.me/529997488654" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
                                         className="whatsapp-button whatsapp-button--dark whatsapp-button--compact"
@@ -77,7 +77,7 @@ const FooterFive = () => {
 							<div className="footer__five-widget-solution ml-60">
 								<ul>
 									{/* <li><Link href="/services"><i className="far fa-chevron-double-right"></i>Servicios</Link></li> */}
-									<li><Link href="/faq"><i className="far fa-chevron-double-right"></i>Preguntas frecuentes</Link></li>
+									<li><Link href="/about"><i className="far fa-chevron-double-right"></i>Preguntas frecuentes</Link></li>
 									{/* <li><Link href="/testimonial"><i className="far fa-chevron-double-right"></i>Testimonios</Link></li> */}
 									<li><Link href="/about"><i className="far fa-chevron-double-right"></i>Sobre nosotros</Link></li>
 								</ul>
@@ -93,7 +93,7 @@ const FooterFive = () => {
 										const words = data.title.split(' ');
 										const firstAndSecondWord = words.slice(0, 3).join(' ');
 										return (
-											<li key={id}><Link href={`/services/${data.id}`}><i className="far fa-chevron-double-right"></i>{firstAndSecondWord}</Link></li>
+											<li key={id}><Link href={`/services`}><i className="far fa-chevron-double-right"></i>{firstAndSecondWord}</Link></li>
 										);
 									})}
 								</ul>
@@ -111,7 +111,7 @@ const FooterFive = () => {
 									</div>
 									<div className="footer__five-widget-location-item-info email">
 										<span>Llámanos</span>
-										<Link href="tel:+09(307)555-0133">+52 999-279-8371</Link>
+										<Link href="tel:+52(999)748-8654">+52 999-748-8654</Link>
 									</div>
 								</div>
 							</div>
