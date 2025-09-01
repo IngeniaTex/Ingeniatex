@@ -49,7 +49,7 @@ const AboutMain = () => {
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Aplicaciones móviles y web a la medida</span>
+                                    <span>Aplicaciones web a la medida</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>

@@ -22,7 +22,7 @@ const BannerFive = () => {
                                 <p>Aprovecha la tecnología más avanzada con nuestros servicios de desarrollo web y 
                                 automatización, diseñados para hacer crecer tu empresa.</p>
                                 <div className="banner__five-content-bottom flex gap-4">
-                                    <Link href="/contact" className="btn-two">Solicita imfomación<i className="fas fa-arrow-right"></i></Link>
+                                    <Link href="/contact" className="btn-two">Solicita infomación<i className="fas fa-arrow-right"></i></Link>
                                     <div>
                                     <a 
                                         href="https://wa.me/529997488654" 
