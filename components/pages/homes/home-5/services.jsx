@@ -8,8 +8,8 @@ const ServicesFive = () => {
                 <div className="container">
                     <div className="row justify-content-center text-center mb-50">
                         <div className="col-xl-7 col-lg-7 col-md-9">
-                            <span className="subtitle-one">Our Services</span>
-                            <h2>Services to Accelerate Your Business</h2>
+                            <span className="subtitle-one">Nuestros Servicos</span>
+                            <h2>Servicos para acelerar tu negocio</h2>
                         </div>
                     </div>
                     <div className="row gy-4 justify-content-center">

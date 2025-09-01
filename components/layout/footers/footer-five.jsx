@@ -86,7 +86,7 @@ const FooterFive = () => {
 					</div>
 					<div className="col-xl-3 col-md-6 col-sm-5 sm-mb-30">
 						<div className="footer__five-widget border-one">
-							<h4>Service</h4>
+							<h4>Servicios</h4>
 							<div className="footer__five-widget-solution">
 								<ul>
 									{servicesData.slice(0, 4).map((data, id) => {
@@ -102,7 +102,7 @@ const FooterFive = () => {
 					</div>
 					<div className="col-xl-3 col-md-6 col-sm-6 sm-mb-30">
 						<div className="footer__five-widget border-one">
-							<h4>Contact</h4>
+							<h4>Contacto</h4>
 							<div className="footer__five-widget-location">
 								<p>Contáctanos para recibir asesoría experta en nuestras soluciones digitales.</p>
 								<div className="footer__five-widget-location-item">

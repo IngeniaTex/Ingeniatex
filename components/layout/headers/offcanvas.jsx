@@ -20,7 +20,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 							<i className="fal fa-phone-alt icon-animation"></i>
 						</div>
 						<div className="header__area-menubar-right-sidebar-popup-contact-item-content">
-							<span>Llamanos</span>
+							<span>Llámanos</span>
 							<h6><Link href="+52(999)748-8654">+52 (999) 748 8654</Link></h6>
 						</div>
 					</div>
