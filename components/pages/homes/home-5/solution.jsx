@@ -9,15 +9,20 @@ const Solution = () => {
                     <div className="row align-items-center gy-4">
                         <div className="col-xl-6 col-lg-6 col-md-9">
                             <div className="technology-solution__one-content">
-                                <span className="subtitle-one">Tech Solutions</span>
-                                <h2>Technology that Drives Business</h2>
-                                <p>Streamlining operations to customer experiences, Business across all sectors are cutting-edge technologies</p>
-                                <div className="satisfied-customer-counter">
-                                    <div className="counter-wrapper">
-                                        <h3 className="counter"><Count number={400}/></h3>
-                                        <h3>+</h3>
-                                    </div>
-                                    <span>Satisficed Customers</span>
+                                <span className="subtitle-one">Integaciones</span>
+                                <h2>Conectamos tu negocio con lo que importa</h2>
+                                <p>Desde la agenda de citas hasta la gestión de pagos en línea, en Ingeniatex integramos herramientas que facilitan tu operación y mejoran la experiencia de tus clientes. Haz que tu página web no solo informe, sino que también trabaje por ti.</p>
+                                <div className="container py-10">
+                                        <h3>Calenario de citas</h3>
+                                        <p>Agenar cita con el calenario de Google</p>
+                                        <a
+                                        href="https://calendar.app.google/QuZ6YeFf5u3HDSZT9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-one"
+                                        >
+                                        Reservar en mi calendario
+                                        </a>
                                 </div>
                             </div> 
                         </div>

@@ -7,6 +7,7 @@ import WorkArea from "../../homes/home/work";
 import Testimonial from "../../homes/home/testimonial";
 import FooterSix from "@/components/layout/footers/footer-six";
 import ScrollToTop from "../../common/scroll/scroll-to-top";
+import Solution from "../../homes/home-5/solution";
 
 const ServicePage = () => {
     return (
@@ -16,6 +17,7 @@ const ServicePage = () => {
             <BreadCrumb title="Our Services" innerTitle="Our Services" />
             <ServicesMain />
             <WorkArea />
+            <Solution/>
             {/* <Testimonial /> */}
             <FooterSix />
             <ScrollToTop />
