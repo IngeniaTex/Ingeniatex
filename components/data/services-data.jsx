@@ -2,19 +2,19 @@ const servicesData = [
     {
       id: 'desarrollo-web',
       icon: <i className="flaticon-software-development"></i>,
-      title: 'Desarrollo Web',
+      title: 'Aplicaciones Web',
       des: 'Creamos sitios web modernos, responsivos y adaptados a las necesidades de cada negocio.',
     },
     {
       id: 'qa-automation',
       icon: <i className="flaticon-data-scientist"></i>,
-      title: 'Calidad y Automatización (QA / Testing / RPA)',
+      title: 'Automatización QA/RPA',
       des: 'Con nuestra experiencia en QA y automatización, ayudamos a mejorar procesos y asegurar la calidad de tus sistemas.',
     },
     {
       id: 'aplicaciones-web',
       icon: <i className="flaticon-global-network"></i>,
-      title: 'Desarrollo de Aplicaciones Web',
+      title: 'Aplicaciones Web',
       des: 'Construimos aplicaciones personalizadas que impulsan la eficiencia de tu negocio.',
     },
     /* {
