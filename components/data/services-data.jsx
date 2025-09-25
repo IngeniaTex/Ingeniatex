@@ -1,8 +1,8 @@
 const servicesData = [
     {
-      id: 'desarrollo-web',
-      icon: <i className="flaticon-software-development"></i>,
-      title: 'Aplicaciones Web',
+      id: 'paginas-web',
+      icon: <i className="flaticon-global-network"></i>,
+      title: 'Páginas Web',
       des: 'Creamos sitios web modernos, responsivos y adaptados a las necesidades de cada negocio.',
     },
     {
@@ -13,8 +13,8 @@ const servicesData = [
     },
     {
       id: 'aplicaciones-web',
-      icon: <i className="flaticon-global-network"></i>,
-      title: 'Aplicaciones Web',
+      icon: <i className="flaticon-software-development"></i>,
+      title: 'Aplicaciones personalizadas',
       des: 'Construimos aplicaciones personalizadas que impulsan la eficiencia de tu negocio.',
     },
     /* {

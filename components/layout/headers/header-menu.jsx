@@ -11,7 +11,7 @@ const MainMenu = () => {
           <Link href="#">Servicios <i className="fas fa-angle-down"></i></Link>
           <ul className="sub-menu">
             <li><Link href="/services/paginas-web">Páginas Web</Link></li>
-            <li><Link href="/services/qa-rpa">Automatización QA/RPA</Link></li>
+            <li><Link href="/services/qa-automation">Automatización QA/RPA</Link></li>
             <li><Link href="/services/aplicaciones-web">Aplicaciones Web</Link></li>
           </ul>
         </li>
