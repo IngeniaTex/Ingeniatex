@@ -15,7 +15,7 @@ const ServicesFive = () => {
                     <div className="row gy-4 justify-content-center">
                         {servicesData?.slice(0, 3).map((data, id) => {
 							const words = data.title.split(' ');
-							const firstAndSecondWord = words.slice(0, 2).join(' ');
+							const firstAndSecondWord = words.slice(0, 3).join(' ');
                             return (
                                 <div className="col-xl-4 col-lg-4 col-md-6" key={id}>
                                     <div className="services__five-single-service">
