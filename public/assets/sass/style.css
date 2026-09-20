@@ -11157,3 +11157,196 @@ Responsive Menu Css
 .header__area-menubar-center-menu ul li .sub-menu {
   min-width: 320px;
 }
+
+/*==========================================================================
+* Ingeniatex – Formulario de cotización (/request-quote)
+==========================================================================*/
+.quote-form {
+  background: var(--color-1);
+  text-transform: none;
+}
+.quote-form__card {
+  background: var(--bg-white);
+  border-radius: 20px;
+  padding: 45px 40px;
+  box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
+}
+.quote-form__header {
+  margin-bottom: 35px;
+}
+.quote-form__header h3 {
+  font-size: 30px;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+.quote-form__header p {
+  color: var(--color-2);
+  margin: 0;
+}
+.quote-form .request-quote__area-inputs {
+  align-items: flex-start;
+  row-gap: 24px;
+}
+.quote-form .request-quote__area-input-field label,
+.quote-form__message label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-heading-color);
+  margin-bottom: 8px;
+}
+.quote-form input[type=text],
+.quote-form input[type=email],
+.quote-form input[type=tel],
+.quote-form textarea,
+.quote-form__select select {
+  height: 56px;
+  border: 1px solid var(--border-color-1);
+  border-radius: 10px;
+  background: var(--color-1);
+  font-size: 16px;
+  padding: 0 18px;
+  transition: 0.3s;
+}
+.quote-form textarea {
+  height: 150px;
+  padding-top: 15px;
+}
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+  font-size: 15px;
+  color: var(--color-2);
+}
+.quote-form input:focus,
+.quote-form textarea:focus,
+.quote-form__select select:focus {
+  background: var(--bg-white);
+  border-color: var(--primary-color-1);
+  box-shadow: 0 0 0 4px rgba(14, 89, 242, 0.1);
+}
+.quote-form__select {
+  position: relative;
+}
+.quote-form__select select {
+  width: 100%;
+  color: var(--body-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 45px;
+  cursor: pointer;
+  outline: none;
+}
+.quote-form__select select:invalid,
+.quote-form__select select option[value=""] {
+  color: var(--color-2);
+}
+.quote-form__select i {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color-1);
+  pointer-events: none;
+  font-size: 16px;
+}
+.quote-form__message {
+  margin-top: 24px;
+}
+.quote-form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 30px;
+  margin-top: 28px;
+}
+.quote-form__footer .btn-two {
+  padding: 17px 40px;
+}
+.quote-form__privacy {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.quote-form__privacy i {
+  color: var(--primary-color-1);
+}
+.quote-form__aside {
+  background: var(--bg-heading-color);
+  color: var(--text-white);
+  border-radius: 20px;
+  padding: 40px 35px;
+}
+.quote-form__aside h4 {
+  color: var(--text-white);
+  font-size: 24px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.quote-form__aside p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+}
+.quote-form__whatsapp {
+  width: 100%;
+  justify-content: center;
+  max-width: none;
+  margin-bottom: 30px;
+}
+.quote-form__whatsapp:hover {
+  color: var(--text-white);
+  border-color: var(--text-white);
+}
+.quote-form__aside-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.quote-form__aside-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.quote-form__aside-list li i {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--primary-color-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.quote-form__aside-list span {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2px;
+}
+.quote-form__aside-list a,
+.quote-form__aside-list strong {
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 16px;
+}
+.quote-form__aside-list a:hover {
+  color: var(--primary-color-2);
+}
+@media (max-width: 991px) {
+  .quote-form__card {
+    padding: 35px 25px;
+  }
+}
+@media (max-width: 575px) {
+  .quote-form__footer .btn-two {
+    width: 100%;
+    justify-content: center;
+  }
+}

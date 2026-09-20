@@ -39,7 +39,7 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 | Título de pestaña | prop `pageTitle` de `<SEO>` en el `index.jsx` de la página; sufijo global en `components/data/seo.jsx` |
 | Estilos custom | final de `public/assets/sass/style.css` |
 | Texto "Quiénes somos" | `components/pages/about/about.jsx` |
-| Formulario de cotización | `components/pages/request-quote/request-quote.jsx` |
+| Formulario de cotización | `components/pages/request-quote/request-quote.jsx` — dropdown de servicios desde `services-data`; si eligen `paginas-web` aparece un segundo select con los planes de `web-plans-data`. Estilos `.quote-form__*` al final de `style.css` |
 
 ## Datos de negocio (mantener consistentes en todos los archivos)
 
