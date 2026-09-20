@@ -18,9 +18,9 @@ const Choose = () => {
                             <div className="why-choose-us__four-title">
                                 <span className="subtitle-one">¿Por qué elegirnos?</span>
                                 <h2>Ingeniatex, tu aliado digital de confianza</h2>
-                                <p>Con nuestra experiencia en desarrollo web, automatización y soluciones 
-        digitales, te ayudamos a mantener tu negocio un paso adelante en el 
-        mundo tecnológico, generando resultados reales y crecimiento sostenido.</p>
+                                <p>Diseñamos y desarrollamos páginas web, creamos soluciones a la medida y nos
+                                encargamos del mantenimiento e integraciones de tu sitio, para que tu negocio
+                                se mantenga un paso adelante con resultados reales y crecimiento sostenido.</p>
                                {/*  <div className="why-choose-us__four-progress-bar">
                                     <div className="why-choose-us__four-progress-bar-wrapper">
                                         <div className="single-progress-bar">

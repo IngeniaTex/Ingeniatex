@@ -19,10 +19,10 @@ const BannerFive = () => {
                             <div className="banner__five-content">
                                 <span className="subtitle-one">Impulsa tu crecimiento </span>
                                 <h2>Soluciones digitales para tu negocio</h2>
-                                <p>Aprovecha la tecnología más avanzada con nuestros servicios de desarrollo web y 
-                                automatización, diseñados para hacer crecer tu empresa.</p>
+                                <p>Diseñamos páginas web, soluciones personalizadas e integraciones digitales que ayudan
+                                a tu negocio a crecer y trabajar de manera más eficiente.</p>
                                 <div className="banner__five-content-bottom flex gap-4">
-                                    <Link href="/contact" className="btn-two">Solicita infomación<i className="fas fa-arrow-right"></i></Link>
+                                    <Link href="/request-quote" className="btn-two">Solicita información<i className="fas fa-arrow-right"></i></Link>
                                     <div>
                                     <a 
                                         href="https://wa.me/529997488654" 

@@ -1,35 +1,103 @@
+// Fuente de verdad de los servicios.
+// - title / des: tarjetas (home, /services).
+// - shortTitle: listas compactas (home, footer). Evita recortar el título por palabras.
+// - longDes / items / note / cta: bloques descriptivos en /services.
+// El orden define la prioridad comercial: Páginas web → Desarrollo → Mantenimiento → Integraciones → QA.
 const servicesData = [
     {
       id: 'paginas-web',
       icon: <i className="flaticon-software-development"></i>,
       title: 'Páginas web profesionales',
-      des: 'Sitios modernos, rápidos y listos para convertir en 7–10 días.',
+      shortTitle: 'Páginas web',
+      des: 'Sitios web modernos, rápidos y adaptados a tu negocio para generar confianza, presentar tus servicios y conectar con nuevos clientes.',
+      longDes: 'Creamos sitios web modernos, rápidos y adaptados a tu negocio, desde landing pages hasta soluciones corporativas más completas.',
+      items: [],
+      cta: { label: 'Solicitar cotización', href: '/request-quote' },
     },
     {
-      id: 'apps-web',
-      icon: <i className="flaticon-mobile-app"></i>,
-      title: 'Aplicaciones web a medida',
-      des: 'Funcionalidades personalizadas, panel de administración y roles.',
+      id: 'desarrollo-web',
+      icon: <i className="flaticon-coding"></i>,
+      title: 'Desarrollo web personalizado',
+      shortTitle: 'Desarrollo personalizado',
+      des: 'Desarrollamos aplicaciones, portales y funcionalidades web adaptadas a los procesos y necesidades específicas de tu negocio.',
+      longDes: 'Cuando una página convencional no es suficiente, desarrollamos soluciones adaptadas a los procesos de tu negocio.',
+      items: [
+        'Portales empresariales',
+        'Dashboards',
+        'Sistemas internos',
+        'Sistemas de citas',
+        'Catálogos dinámicos',
+        'Cotizadores',
+        'Áreas privadas para clientes',
+        'Aplicaciones web',
+        'Integraciones con bases de datos',
+      ],
+      cta: { label: 'Cuéntanos tu proyecto', href: '/request-quote' },
+    },
+    {
+      id: 'mantenimiento-web',
+      icon: <i className="flaticon-technical-support"></i>,
+      title: 'Mantenimiento web',
+      shortTitle: 'Mantenimiento web',
+      des: 'Mantenemos tu página actualizada, segura y funcionando correctamente con soporte técnico y mantenimiento continuo.',
+      longDes: 'Nos encargamos del mantenimiento técnico de tu sitio para mantenerlo actualizado, seguro y funcionando correctamente.',
+      items: [
+        'Actualización de textos e imágenes',
+        'Ajustes menores de contenido',
+        'Corrección de errores',
+        'Revisión de formularios',
+        'Actualización de dependencias',
+        'Optimización de rendimiento',
+        'Backups',
+        'Administración de hosting',
+        'Administración de dominio',
+        'Certificado SSL',
+        'Soporte técnico',
+      ],
+      note: 'Planes de mantenimiento disponibles de acuerdo con las necesidades del sitio.',
+      cta: { label: 'Solicitar mantenimiento', href: '/request-quote' },
+    },
+    {
+      id: 'integraciones',
+      icon: <i className="flaticon-global-network"></i>,
+      title: 'Integraciones y automatización',
+      shortTitle: 'Integraciones y automatización',
+      des: 'Conectamos tu sitio con herramientas, servicios y automatizaciones que ayudan a simplificar procesos y mejorar la experiencia de tus clientes.',
+      longDes: 'Conectamos tu página o aplicación con las herramientas que tu negocio ya utiliza para reducir tareas manuales y mejorar la experiencia de tus clientes.',
+      items: [
+        'WhatsApp',
+        'Google Calendar',
+        'Google Maps',
+        'Google Analytics',
+        'CRM',
+        'APIs externas',
+        'Plataformas de pago',
+        'Formularios',
+        'Servicios de correo',
+        'Bases de datos',
+        'Webhooks',
+        'Automatización de leads',
+        'Notificaciones',
+        'Herramientas de inteligencia artificial',
+      ],
+      cta: { label: 'Consultar integración', href: '/request-quote' },
     },
     {
       id: 'qa-automation',
       icon: <i className="flaticon-data-scientist"></i>,
       title: 'QA Automation',
+      shortTitle: 'QA Automation',
       des: 'Pruebas automatizadas para flujos críticos, reportes y CI/CD.',
+      longDes: 'Capacidad especializada para equipos que ya cuentan con una aplicación: automatizamos pruebas de los flujos críticos para detectar errores antes de que lleguen a tus usuarios.',
+      items: [
+        'Pruebas end-to-end de flujos críticos',
+        'Pruebas de API',
+        'Reportes de ejecución',
+        'Integración con CI/CD',
+      ],
+      cta: { label: 'Consultar QA Automation', href: '/request-quote' },
     },
-    {
-      id: 'automatizacion-procesos',
-      icon: <i className="flaticon-global-network"></i>,
-      title: 'Automatización de procesos',
-      des: 'Bots, integraciones y RPA para ahorrar tiempo y reducir errores.',
-    },
-    /* {
-      id: 'agentes-ai',
-      icon: <i className="flaticon-satellite-signal"></i>,
-      title: 'Agentes AI',
-      des: 'Chatbots y asistentes entrenados con tus contenidos (web, WhatsApp, email).',
-    }, */
   ];
-  
+
   export default servicesData;
-  
+

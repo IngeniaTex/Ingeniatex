@@ -54,24 +54,19 @@ const FooterSix = () => {
 					</div>
 					<div className="col-xl-3 col-md-6 col-sm-5 sm-mb-30">
 						<div className="footer__five-widget border-one">
-							<h4>Service</h4>
+							<h4>Servicios</h4>
 							<div className="footer__five-widget-solution">
 								<ul>
-									{servicesData.slice(0, 4).map((data, id) => {
-										const words = data.title.split(' ');
-										const firstAndSecondWord = words.slice(0, 3).join(' ');
-										return (
-											<li key={id}><Link href={`/services`}><i className="far fa-chevron-double-right"></i>{firstAndSecondWord}</Link></li>
-											// <li key={id}><Link href={`/services/${data.id}`}><i className="far fa-chevron-double-right"></i>{firstAndSecondWord}</Link></li>
-										);
-									})}
+									{servicesData.slice(0, 4).map((data) => (
+										<li key={data.id}><Link href={`/services/${data.id}`}><i className="far fa-chevron-double-right"></i>{data.shortTitle}</Link></li>
+									))}
 								</ul>
 							</div>
 						</div>
 					</div>
 					<div className="col-xl-3 col-md-6 col-sm-6 sm-mb-30">
 						<div className="footer__five-widget border-one">
-							<h4>Contact</h4>
+							<h4>Contacto</h4>
 							<div className="footer__five-widget-location">
 								<p>Contáctanos para recibir asesoría experta en nuestras soluciones digitales.</p>
 								<div className="footer__five-widget-location-item">
@@ -99,7 +94,7 @@ const FooterSix = () => {
 						<div className="col-xl-5 col-lg-6">
 							<div className="copyright__one-right">
 								<Link href="/about">Política de privacidad</Link>
-								<Link href="/contact">Contáctanos</Link>
+								<Link href="/request-quote">Contáctanos</Link>
 							</div>
 						</div>
 					</div>

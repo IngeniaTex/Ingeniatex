@@ -39,9 +39,9 @@ const AboutMain = () => {
                         <div className="about__one-content">
                             <span className="subtitle-one">Quiénes somos</span>
                             <h2>Transformamos ideas en soluciones digitales</h2>
-                            <p>En <strong>Ingeniatex</strong> creemos que la tecnología debe estar al alcance de todas las empresas, 
-                            sin importar su tamaño. Desde Mérida, Yucatán, apoyamos a pequeñas y medianas empresas en todo México,
-                             ayudándolas a fortalecer su presencia digital, optimizar procesos y crecer con innovación.</p>
+                            <p>En <strong>Ingeniatex</strong> creemos que la tecnología debe estar al alcance de todos.
+                            Desde Mérida, Yucatán, acompañamos a emprendedores, profesionistas y negocios de todo tipo en México,
+                            ayudándolos a fortalecer su presencia digital, optimizar procesos y crecer con innovación.</p>
                             <div className="about__one-content-service">
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
@@ -49,18 +49,18 @@ const AboutMain = () => {
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Aplicaciones web a la medida</span>
+                                    <span>Desarrollo web personalizado</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Automatización de pruebas y QA</span>
+                                    <span>Mantenimiento de páginas web</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Consultoría y soporte en tecnología</span>
+                                    <span>Integraciones y automatización web</span>
                                 </div>
                             </div>
-                            <Link href="/services" className="btn-one">Conoce más<i className="fas fa-arrow-right"></i></Link>
+                            <Link href="/#servicios" className="btn-one">Conoce más<i className="fas fa-arrow-right"></i></Link>
                         </div>
                     </div>
                 </div>
