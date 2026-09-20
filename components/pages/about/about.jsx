@@ -57,7 +57,7 @@ const AboutMain = () => {
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Integraciones y automatización web</span>
+                                    <span>Integración de aplicaciones y automatización</span>
                                 </div>
                             </div>
                             <Link href="/#servicios" className="btn-one">Conoce más<i className="fas fa-arrow-right"></i></Link>

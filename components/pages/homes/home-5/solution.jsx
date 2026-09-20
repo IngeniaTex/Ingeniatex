@@ -2,7 +2,7 @@ import Link from "next/link";
 import image from "../../../../public/assets/img/technology-solution/tech-solution-one.png";
 import servicesData from "@/components/data/services-data";
 
-// Sección "Integraciones y automatización". Se monta en /services/integraciones (no en la home).
+// Sección "Integración de aplicaciones". Se monta en /services/integraciones (no en la home).
 const Solution = () => {
     const service = servicesData.find((item) => item.id === 'integraciones');
     return (
@@ -12,7 +12,7 @@ const Solution = () => {
                     <div className="row align-items-center gy-4">
                         <div className="col-xl-6 col-lg-6 col-md-9">
                             <div className="technology-solution__one-content">
-                                <span className="subtitle-one">Integraciones y automatización</span>
+                                <span className="subtitle-one">Integración de aplicaciones</span>
                                 <h2>Conectamos tu negocio con lo que importa</h2>
                                 <p>{service.longDes}</p>
                                 <p>Podemos conectar tu sitio con:</p>
@@ -37,7 +37,7 @@ const Solution = () => {
                         <div className="col-xl-6 col-lg-6">
                             <div className="technology-solution__one-image">
                                 <div className="technology-solution__one-image-wrapper">
-                                    <img src={image.src} alt="Integraciones y automatización web" />
+                                    <img src={image.src} alt="Integración de aplicaciones" />
                                 </div>
                             </div>
                         </div>

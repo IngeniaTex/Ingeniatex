@@ -2,7 +2,7 @@
 // - title / des: tarjetas (home, /services).
 // - shortTitle: listas compactas (home, footer). Evita recortar el título por palabras.
 // - longDes / items / note / cta: bloques descriptivos en /services.
-// El orden define la prioridad comercial: Páginas web → Desarrollo → Mantenimiento → Integraciones → QA.
+// El orden define la prioridad comercial: Páginas web → Desarrollo → Mantenimiento → Integración de aplicaciones → QA y automatización.
 const servicesData = [
     {
       id: 'paginas-web',
@@ -60,10 +60,10 @@ const servicesData = [
     {
       id: 'integraciones',
       icon: <i className="flaticon-global-network"></i>,
-      title: 'Integraciones y automatización',
-      shortTitle: 'Integraciones y automatización',
-      des: 'Conectamos tu sitio con herramientas, servicios y automatizaciones que ayudan a simplificar procesos y mejorar la experiencia de tus clientes.',
-      longDes: 'Conectamos tu página o aplicación con las herramientas que tu negocio ya utiliza para reducir tareas manuales y mejorar la experiencia de tus clientes.',
+      title: 'Integración de aplicaciones',
+      shortTitle: 'Integración de aplicaciones',
+      des: 'Conectamos tu sitio o aplicación con las herramientas y servicios que ya usas para centralizar información y mejorar la experiencia de tus clientes.',
+      longDes: 'Conectamos tu página o aplicación con las plataformas que tu negocio ya utiliza, para que la información fluya entre ellas sin capturas dobles ni procesos manuales.',
       items: [
         'WhatsApp',
         'Google Calendar',
@@ -76,7 +76,6 @@ const servicesData = [
         'Servicios de correo',
         'Bases de datos',
         'Webhooks',
-        'Automatización de leads',
         'Notificaciones',
         'Herramientas de inteligencia artificial',
       ],
@@ -85,17 +84,21 @@ const servicesData = [
     {
       id: 'qa-automation',
       icon: <i className="flaticon-data-scientist"></i>,
-      title: 'QA Automation',
-      shortTitle: 'QA Automation',
-      des: 'Pruebas automatizadas para flujos críticos, reportes y CI/CD.',
-      longDes: 'Capacidad especializada para equipos que ya cuentan con una aplicación: automatizamos pruebas de los flujos críticos para detectar errores antes de que lleguen a tus usuarios.',
+      title: 'QA y automatización',
+      shortTitle: 'QA y automatización',
+      des: 'Automatizamos pruebas, procesos y flujos de negocio para reducir errores, ahorrar tiempo y asegurar que todo funcione como debe.',
+      longDes: 'Automatizamos lo que hoy se hace a mano: desde las pruebas de tu aplicación hasta los procesos y flujos de trabajo de tu negocio, para que tu equipo se concentre en lo importante y los errores se detecten antes de llegar a tus clientes.',
       items: [
-        'Pruebas end-to-end de flujos críticos',
+        'Automatización de procesos y flujos de negocio',
+        'Automatización de tareas repetitivas y reportes',
+        'Seguimiento automático de leads y notificaciones',
+        'Bots y RPA para captura y validación de datos',
+        'Pruebas automatizadas end-to-end de flujos críticos',
         'Pruebas de API',
-        'Reportes de ejecución',
+        'Reportes de ejecución de pruebas',
         'Integración con CI/CD',
       ],
-      cta: { label: 'Consultar QA Automation', href: '/request-quote' },
+      cta: { label: 'Consultar QA y automatización', href: '/request-quote' },
     },
   ];
 
