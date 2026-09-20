@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import servicesData from '@/components/data/services-data';
 
 const MainMenu = () => {
     return (
@@ -30,12 +31,12 @@ const MainMenu = () => {
                         <li><Link href="/404">404</Link></li>
                     </ul>
                 </li> */}
-                <li className="menu-item-has-children"><Link href="/services">Servicios</Link>
-                  {/*   <ul className="sub-menu">
-                        <li><Link href="/services">Services 01</Link></li>
-                        <li><Link href="/services-two">Services 02</Link></li>
-                        <li><Link href="/services/data-analytics">Services Details</Link></li>
-                    </ul> */}
+                <li className="menu-item-has-children"><Link href="/#servicios">Servicios <i className="fas fa-angle-down"></i></Link>
+                    <ul className="sub-menu">
+                        {servicesData.map((service) => (
+                            <li key={service.id}><Link href={`/services/${service.id}`}>{service.title}</Link></li>
+                        ))}
+                    </ul>
                 </li>
                {/*  <li className="menu-item-has-children"><Link href="#">Portfolio <i className="fas fa-angle-down"></i></Link>
                     <ul className="sub-menu">

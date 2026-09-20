@@ -3,19 +3,21 @@ import SEO from "@/components/data/seo";
 import HeaderOne from "@/components/layout/headers/header/header-one";
 import BreadCrumb from "../../common/breadcrumb";
 import ServicesSingleMain from "./services-single";
-import FooterOne from "@/components/layout/footers/footer-one";
+import WorkArea from "../../homes/home/work";
+import FooterSix from "@/components/layout/footers/footer-six";
 import ScrollToTop from "../../common/scroll/scroll-to-top";
 
-const ServicesSingle = ({serviceDetails}) => {
-    const words = serviceDetails.title.split(' ');
-    const firstAndSecondWord = words.slice(0, 2).join(' ');
+// Página de detalle de un servicio (/services/[id]). Mismo formato que /services:
+// header, breadcrumb, contenido del servicio, "Nuestro Proceso" y footer.
+const ServicesSingle = ({ serviceDetails }) => {
     return (
         <>
-            <SEO pageTitle={serviceDetails?.title} />            
+            <SEO pageTitle={serviceDetails.title} />
             <HeaderOne />
-            <BreadCrumb title={firstAndSecondWord} innerTitle={serviceDetails?.title} />
-            <ServicesSingleMain firstAndSecondWord={firstAndSecondWord}/>
-            <FooterOne />
+            <BreadCrumb title={serviceDetails.title} innerTitle="Servicios" />
+            <ServicesSingleMain service={serviceDetails} />
+            <WorkArea />
+            <FooterSix />
             <ScrollToTop />
         </>
     );

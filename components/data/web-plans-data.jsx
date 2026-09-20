@@ -1,0 +1,87 @@
+// Planes de páginas web mostrados en /services (components/pages/services/service/web-plans.jsx).
+// Los precios son "desde" y en MXN. No publicar mensualidades, financiamiento ni esquemas de renta.
+const webPlansData = [
+    {
+      id: 'starter',
+      name: 'Starter',
+      price: 'Desde $5,000 MXN',
+      description: 'Ideal para emprendedores, profesionales independientes y pequeños negocios que necesitan comenzar su presencia digital.',
+      recommended: false,
+      features: [
+        'Landing page profesional',
+        'Una página de hasta 5 bloques o secciones',
+        'Diseño adaptable a celular, tablet y computadora',
+        'Formulario de contacto',
+        'Botón de WhatsApp',
+        'Enlaces a redes sociales',
+        'Google Maps cuando aplique',
+        'SEO básico',
+        'Certificado SSL',
+        'Dominio por 1 año',
+        'Hosting por 1 año',
+        '1 correo empresarial durante el primer año',
+        'Configuración y publicación',
+      ],
+      cta: { label: 'Solicitar cotización', href: '/request-quote' },
+    },
+    {
+      id: 'business',
+      name: 'Business',
+      price: 'Desde $7,500 MXN',
+      description: 'Para negocios que necesitan un sitio más completo para presentar su empresa, servicios y generar nuevos contactos.',
+      recommended: true,
+      features: [
+        'Sitio web de hasta 5 páginas o secciones principales',
+        'Diseño personalizado',
+        'Diseño responsive',
+        'Formularios de contacto',
+        'WhatsApp',
+        'Redes sociales',
+        'Google Maps',
+        'Google Analytics',
+        'SEO técnico básico',
+        'Certificado SSL',
+        'Dominio por 1 año',
+        'Hosting por 1 año',
+        'Hasta 2 correos empresariales durante el primer año',
+        'Configuración y publicación',
+      ],
+      cta: { label: 'Solicitar cotización', href: '/request-quote' },
+    },
+    {
+      id: 'pro',
+      name: 'Pro',
+      price: 'Desde $15,000 MXN',
+      description: 'Para empresas y proyectos que requieren funcionalidades especiales, integraciones o desarrollo personalizado.',
+      recommended: false,
+      features: [
+        'Diseño y desarrollo personalizado',
+        'Estructura según las necesidades del proyecto',
+        'Catálogo de productos o servicios',
+        'Portafolio',
+        'Blog o contenido dinámico',
+        'Formularios avanzados',
+        'Integraciones con servicios externos',
+        'APIs',
+        'Automatizaciones',
+        'Analítica',
+        'Optimización de rendimiento',
+        'SEO técnico',
+        'Certificado SSL',
+        'Dominio por 1 año',
+        'Hosting por 1 año',
+        'Correos empresariales según proyecto',
+      ],
+      note: 'Las funcionalidades avanzadas se cotizan de acuerdo con las necesidades y complejidad de cada proyecto.',
+      cta: { label: 'Solicitar cotización', href: '/request-quote' },
+    },
+  ];
+
+  // Aclaraciones que se muestran debajo de las cards, en texto discreto.
+  export const webPlansNotes = [
+    'Los planes incluyen dominio y hosting durante el primer año. A partir del segundo año, la renovación se cotiza de acuerdo con el dominio, infraestructura y necesidades del proyecto.',
+    'El dominio se registra preferentemente a nombre del cliente para garantizar su propiedad.',
+    'Los correos empresariales incluidos aplican durante el primer año. Servicios especializados como Google Workspace o Microsoft 365 se cotizan por separado.',
+  ];
+
+  export default webPlansData;

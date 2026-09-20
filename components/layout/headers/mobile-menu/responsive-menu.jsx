@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react';
+import servicesData from '@/components/data/services-data';
 
 const ResponsiveMenu = () => {
     const [activeMenu, setActiveMenu] = useState(null);
@@ -44,13 +45,13 @@ const ResponsiveMenu = () => {
                         </ul>
                     <a className={`mean-expand ${activeIcon("pages")}`} onClick={() => active("pages")}></a>
                 </li>  */}
-                <li className='menu-item-has-children'><Link href='/services'>Servicios</Link>
-                    {/* <ul className='sub-menu' style={activeSubMenu("services")}>
-                        <li><Link href="/services">Services 01</Link></li>
-                        <li><Link href="/services-two">Services 02</Link></li>
-                        <li><Link href="/services/data-analytics">Services Details</Link></li>
+                <li className='menu-item-has-children'><Link href='/#servicios'>Servicios</Link>
+                    <ul className='sub-menu' style={activeSubMenu("services")}>
+                        {servicesData.map((service) => (
+                            <li key={service.id}><Link href={`/services/${service.id}`}>{service.title}</Link></li>
+                        ))}
                     </ul>
-                    <a className={`mean-expand ${activeIcon("services")}`} onClick={() => active("services")}></a> */}
+                    <a className={`mean-expand ${activeIcon("services")}`} onClick={() => active("services")}></a>
                 </li>
                 {/* <li className='menu-item-has-children'><Link href='#'>Project</Link>
                     <ul className='sub-menu' style={activeSubMenu("project")}>

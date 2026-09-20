@@ -9,7 +9,7 @@ import ScrollToTop from '../common/scroll/scroll-to-top';
 const RequestQuotePage = () => {
     return (
         <>
-            <SEO pageTitle="Cotizaciòn" />
+            <SEO pageTitle="Solicitar cotización" />
             <HeaderOne />
             <BreadCrumb title="Solicitar Cotización" innerTitle="Información de Servicios" />
             <RequestQuoteMain />

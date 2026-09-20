@@ -83,8 +83,8 @@ const AboutFive = () => {
                                     <i className="fas fa-check-circle"></i>
                                     <div className="single-service-content">
                                         <h4>Soluciones personalizadas</h4>
-                                        <p>Diseñamos experiencias digitales adaptadas a tus necesidades,
-                                        fáciles de administrar y listas para crecer junto contigo.</p>
+                                        <p>Desarrollo a la medida, mantenimiento e integraciones con las herramientas
+                                        que ya usas, para que tu sitio sea fácil de administrar y crezca contigo.</p>
                                     </div>
                                 </div>
                             </div>
