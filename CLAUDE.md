@@ -18,6 +18,7 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 **Rutas personalizadas (las únicas que importan):**
 - `/` → `components/pages/homes/home-5/` (HeaderFive + FooterFive)
 - `/services/[id]` → `components/pages/services/service-single/` (una página por servicio, SSG vía `generateStaticParams`; header, breadcrumb, contenido, Nuestro Proceso, footer). **No existe `/services`**: el listado vive en la home (`/#servicios`) y en el dropdown del menú.
+- `/proyectos` → `components/pages/projects/` (portafolio; el botón "Ver nuestros proyectos" bajo los planes lleva aquí)
 - `/about` → `components/pages/about/` (HeaderOne + FooterSix)
 - `/request-quote` → `components/pages/request-quote/` (HeaderOne + FooterFive)
 
@@ -29,6 +30,7 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 |---|---|
 | Textos de la home | `components/pages/homes/home-5/{banner,about,work,services,choose}.jsx` |
 | Servicios (título, descripción, icono, id, lista, CTA) | `components/data/services-data.jsx` — única fuente de verdad. Alimenta home, `/services`, `/services/[id]`, footers y el formulario de cotización |
+| Proyectos del portafolio | `components/data/projects-data.jsx` → página `/proyectos` (`components/pages/projects/`). Las capturas van en `public/assets/img/projects/` |
 | Planes de páginas web (Starter/Business/Pro) | `components/data/web-plans-data.jsx` → `components/pages/services/service/web-plans.jsx` (se monta en `/services/paginas-web`) |
 | Bloque descriptivo de un servicio | `components/pages/services/service/service-block.jsx` (carpeta `service/` solo guarda piezas reutilizables: `service-block.jsx`, `web-plans.jsx`); el de integraciones es `components/pages/homes/home-5/solution.jsx` |
 | Menú desktop | `components/layout/headers/header-menu.jsx` — el dropdown "Servicios" se genera desde `services-data` |
