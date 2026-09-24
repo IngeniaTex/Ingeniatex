@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import logo1 from "../../../../public/assets/img/logo-1.png";
 import logo2 from "../../../../public/assets/img/logo-2.png";
 import MobileMenuPopup from '../mobile-menu/menu-area';
+import TopBanner from '../top-banner';
+import WhatsappCta from '../whatsapp-cta';
 
 const HeaderFive = ({variant}) => {
     const [menuSidebar, setMenuSidebar] = useState(false);
@@ -20,6 +22,7 @@ const HeaderFive = ({variant}) => {
     }, []);
     return (
         <>
+        <TopBanner />
         <div className={`header__area ${ variant ? variant : "" } header__sticky five ${isSticky ? "header__sticky-sticky-menu" : ""}`}>
             <div className="container">
                 <div className="header__area-menubar">
@@ -35,6 +38,9 @@ const HeaderFive = ({variant}) => {
                     </div>
                     <div className="header__area-menubar-right">
                         <div className="header__area-menubar-right-box">
+                            <div className="header__area-menubar-right-box-whatsapp">
+                                <WhatsappCta className="whatsapp-cta--header" />
+                            </div>
                             <div className="header__area-menubar-right-box-btn">
                                 <Link className="btn-one" href="/request-quote">Solicitar Cotización<i className="fas fa-arrow-right"></i></Link>
                             </div>

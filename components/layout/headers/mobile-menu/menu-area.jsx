@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ResponsiveMenu from "./responsive-menu";
+import WhatsappCta from "../whatsapp-cta";
 
 const MobileMenuPopup = ({ isOpen, setIsOpen, popupLogo }) => {
     return (
@@ -18,6 +19,9 @@ const MobileMenuPopup = ({ isOpen, setIsOpen, popupLogo }) => {
                         <ResponsiveMenu />
                     </div>
                 </div>
+            </div>
+            <div className="menu__bar-popup-whatsapp">
+                <WhatsappCta className="whatsapp-cta--menu" label="Escríbenos por WhatsApp" />
             </div>
         </div>
     );

@@ -7,6 +7,8 @@ import logo1 from "../../../../public/assets/img/logo-1.png";
 import logo2 from "../../../../public/assets/img/logo-2.png";
 import MobileMenuPopup from '../mobile-menu/menu-area';
 import Link from 'next/link';
+import TopBanner from '../top-banner';
+import WhatsappCta from '../whatsapp-cta';
 
 const HeaderOne = ({variant}) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -24,6 +26,7 @@ const HeaderOne = ({variant}) => {
     }, []);
     return (
         <>
+        <TopBanner />
         {/* <div className="top__bar">
             <div className="container">
                 <div className="row">
@@ -69,6 +72,9 @@ const HeaderOne = ({variant}) => {
                                     <span className="bar-2"></span>
                                     <span className="bar-3"></span>
                                 </div>
+                            </div>
+                            <div className="header__area-menubar-right-box-whatsapp">
+                                <WhatsappCta className="whatsapp-cta--header" />
                             </div>
                             <div className="header__area-menubar-right-box-btn">
                                 <Link className="btn-one" href="/request-quote">Solicitar Cotización<i className="fas fa-arrow-right"></i></Link>
