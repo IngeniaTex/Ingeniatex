@@ -47,7 +47,7 @@ const WorkArea = () => {
                     </div>
                     <div className="col-xl-6">
                         <div className="work-process-area__one-right-img">
-                            <img src={image1.src} alt="image" />
+                            <img src={image1.src} alt="" aria-hidden="true" />
                         </div>
                         <div className="work-process-area__one-right-counter-img">
                             <div className="img-counter">
@@ -57,7 +57,7 @@ const WorkArea = () => {
                                 </div>
                                 <span>Años de experiencia</span>
                             </div>
-                            <img src={image2.src} alt="image" />
+                            <img src={image2.src} alt="" aria-hidden="true" />
                         </div>
                     </div>
                 </div>

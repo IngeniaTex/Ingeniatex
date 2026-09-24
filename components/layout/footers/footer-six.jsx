@@ -9,7 +9,7 @@ const FooterSix = () => {
     return (
         <>
 		{/* <div className="subscribe__one three">
-			<img src={subscribe.src} className="subscribe__three-shape" alt="image" />
+			<img src={subscribe.src} className="subscribe__three-shape" alt="" aria-hidden="true" />
 			<div className="container">
 				<div className="row justify-content-center text-center subscribe__one-content" style={{backgroundImage: `url(${ctaBg.src})`}}>
 					<div className="col-xl-7 col-lg-8">
@@ -31,7 +31,7 @@ const FooterSix = () => {
 					<div className="col-xl-3 col-md-6 col-sm-7 xl-mb-30">
 						<div className="footer__five-widget">
 							<div className="footer__five-widget-about">
-								<Link href="/"><img src={logo.src} alt="image" /></Link>
+								<Link href="/"><img src={logo.src} alt="Ingeniatex" /></Link>
 								<p>En Ingeniatex creamos soluciones digitales diseñadas para impulsar el crecimiento de tu empresa.</p>
 								<div className="footer__five-widget-about-social">
 									<Social />

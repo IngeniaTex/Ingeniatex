@@ -4533,7 +4533,7 @@ Responsive Menu Css
   z-index: 3;
   position: relative;
 }
-.banner__five-content h2 {
+.banner__five-content h1, .banner__five-content h2 {
   font-size: 72px;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -4587,12 +4587,12 @@ Responsive Menu Css
 }
 
 @media (max-width: 1399px) {
-  .banner__five-content h2 {
+  .banner__five-content h1, .banner__five-content h2 {
     font-size: 68px;
   }
 }
 @media (max-width: 767px) {
-  .banner__five-content h2 {
+  .banner__five-content h1, .banner__five-content h2 {
     font-size: 50px;
   }
 }
@@ -4618,7 +4618,7 @@ Responsive Menu Css
   z-index: 3;
   position: relative;
 }
-.page__banner-content h2 {
+.page__banner-content h1, .page__banner-content h2 {
   color: var(--text-white);
   margin-bottom: 25px;
   font-size: 64px;
@@ -4652,14 +4652,14 @@ Responsive Menu Css
   }
 }
 @media (max-width: 767px) {
-  .page__banner-content h2 {
+  .page__banner-content h1, .page__banner-content h2 {
     margin-bottom: 20px;
     font-size: 64px;
     line-height: 80px;
   }
 }
 @media (max-width: 535px) {
-  .page__banner-content h2 {
+  .page__banner-content h1, .page__banner-content h2 {
     margin-bottom: 18px;
     font-size: 40px;
     line-height: 60px;

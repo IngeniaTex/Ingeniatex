@@ -1,5 +1,4 @@
 "use client"
-import SEO from "@/components/data/seo";
 import HeaderOne from "@/components/layout/headers/header/header-one";
 import BreadCrumb from "../common/breadcrumb";
 import ProjectsMain from "./projects";
@@ -10,7 +9,6 @@ import ScrollToTop from "../common/scroll/scroll-to-top";
 const ProjectsPage = () => {
     return (
         <>
-            <SEO pageTitle="Proyectos" />
             <HeaderOne />
             <BreadCrumb title="Proyectos" innerTitle="Sitios que hemos construido" />
             <ProjectsMain />

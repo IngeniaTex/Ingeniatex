@@ -8,7 +8,7 @@ const Error = () => {
                 <div className="row justify-content-center">
                     <div className="col-xl-7">
                         <div className="error-img">
-                            <img src={image.src} alt="image" />
+                            <img src={image.src} alt="" aria-hidden="true" />
                         </div>
                         <Link href="/" className="btn-two m-auto d-table">Go Back
                             <i className="fas fa-chevron-right"></i>

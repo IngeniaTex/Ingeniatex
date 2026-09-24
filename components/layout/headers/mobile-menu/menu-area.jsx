@@ -7,7 +7,7 @@ const MobileMenuPopup = ({ isOpen, setIsOpen, popupLogo }) => {
         <div className={`menu__bar-popup ${isOpen ? "show" : ""}`}>
             <div className="menu__bar-popup-top">
                 <div className="logo">
-                    <Link href="/"><img src={popupLogo?.src} alt='logo' /></Link>
+                    <Link href="/"><img src={popupLogo?.src} alt='Ingeniatex' /></Link>
                 </div>
                 <div className="close" onClick={() => setIsOpen(false)}>
                     <i className="fal fa-times"></i>

@@ -1,5 +1,4 @@
 "use client";
-import SEO from "@/components/data/seo";
 import HeaderFive from "@/components/layout/headers/header/header-five";
 import BannerFive from "./banner";
 import AboutFive from "./about";
@@ -16,7 +15,6 @@ const HomeFive = () => {
 
     return (
         <div>
-            <SEO pageTitle='Ingeniatex' />
             <HeaderFive />
             <BannerFive />
             <AboutFive />

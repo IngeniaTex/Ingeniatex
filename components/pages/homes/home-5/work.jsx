@@ -15,9 +15,9 @@ const WorkAreaFive = () => {
                 </div>
                 <div className="work-process__three-card">
                     <div className="work-process__three-card-arrows">
-                        <img src={arrow1.src} alt="arrow" className="arrow-1" />
-                        <img src={arrow2.src} alt="arrow" className="arrow-2" />
-                        <img src={arrow3.src} alt="arrow" className="arrow-3" />
+                        <img src={arrow1.src} alt="" aria-hidden="true" className="arrow-1" />
+                        <img src={arrow2.src} alt="" aria-hidden="true" className="arrow-2" />
+                        <img src={arrow3.src} alt="" aria-hidden="true" className="arrow-3" />
                     </div>
                     <div className="work-process__three-card-single">
                         <h3>01</h3>

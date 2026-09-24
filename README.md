@@ -36,21 +36,23 @@ npm run lint
 
 ```
 app/                         Rutas (App Router). Cada page.jsx solo monta un componente de components/pages
-  layout.jsx                 Layout raíz ("use client"): carga globals.css y el JS de Bootstrap
+  layout.jsx                 Layout raíz (Server Component): metadata global, JSON-LD del negocio, globals.css
+  sitemap.js / robots.js     /sitemap.xml y /robots.txt
+  opengraph-image.jsx        Imagen 1200x630 que se ve al compartir el sitio
+  not-found.jsx              404 real (status 404)
   page.jsx                   Home → components/pages/homes/home-5
   globals.css                Importa todas las hojas de estilo (Bootstrap, Swiper, FA, style.css…)
   services/[id]/             /services/<id> (una página por servicio; no existe /services)
   proyectos/                 /proyectos (portafolio)
   about/                     /about
   request-quote/             /request-quote
-  [not-found]/               404
 
 components/
   data/
     services-data.jsx        FUENTE DE VERDAD de los servicios (id, icono, títulos, descripciones, lista, CTA)
     web-plans-data.jsx       Planes de páginas web (Starter / Business / Pro) + aclaraciones
     projects-data.jsx        Proyectos del portafolio (nombre, categoría, captura, URL)
-    seo.jsx                  Componente <SEO pageTitle> → setea document.title en cliente
+    site.jsx                 Dominio, nombre, contacto y redes: los usa metadata, sitemap, robots y JSON-LD
     social.jsx               Iconos de redes sociales (footer / offcanvas)
     blog-data.jsx            Notas de la sección de blog de la home (home-5/blog.jsx)
   layout/
@@ -109,7 +111,7 @@ No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-f
 - **Planes de páginas web** → `components/data/web-plans-data.jsx` (precios, características, notas).
 - **Proyectos** (`/proyectos`) → `components/data/projects-data.jsx`. Para agregar uno: captura del sitio en `public/assets/img/projects/` (1280×680 recortado desde arriba) + su entrada en el array.
 - **Menú** → `components/layout/headers/header-menu.jsx` (desktop) **y** `components/layout/headers/mobile-menu/responsive-menu.jsx` (móvil). Hay que actualizar los dos. El dropdown de servicios se arma solo desde `services-data`.
-- **Título de pestaña** → prop `pageTitle` del componente `<SEO>` en el `index.jsx` de cada página. El sufijo " - Páginas web y Automatización" se agrega en `components/data/seo.jsx`.
+- **Título de pestaña y description** → `export const metadata` en el `app/*/page.jsx` de la ruta. El sufijo "| Ingeniatex" sale del `title.template` de `app/layout.jsx`. En `/services/[id]` se generan desde `services-data` con `generateMetadata`.
 - **Estilos custom** → agregar al final de `public/assets/sass/style.css`. Es la única hoja de estilos: los `.scss` originales se eliminaron porque ya no generaban ese archivo.
 - **Imágenes** → `public/assets/img/…`, importadas como módulo y usadas con `.src` (`<img src={logo.src} />`).
 
@@ -118,10 +120,9 @@ No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-f
 - Conectar el formulario de `/request-quote` a un servicio de envío (Formspree, Resend, API route, etc.).
 - Limpiar el menú móvil (`responsive-menu.jsx`): aún muestra Home 01–05, Pages, Team, etc.
 - Reemplazar enlaces genéricos de redes sociales en `data/social.jsx`.
-- Corregir `mailto:` en `offcanvas.jsx` y el `<link rel="icon" href="../favicon.ico">` en `app/layout.jsx`.
+- Corregir el `mailto:` de `offcanvas.jsx`, que apunta a otro correo.
 - Los `<label for=…>` de los formularios deberían ser `htmlFor` (JSX).
 - El año del copyright está fijo (`© Ingeniatex 2025`) en `footer-five.jsx`.
-- Migrar `<SEO>` (título en cliente) a la Metadata API de Next.js para SEO real.
 - `eslint-config-next` está en 15.5.0 mientras `next` está en 14.2.5; conviene alinearlos.
 
 ## Despliegue

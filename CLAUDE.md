@@ -1,6 +1,6 @@
 # CLAUDE.md — Ingeniatex
 
-Sitio corporativo de Ingeniatex (Mérida, Yucatán). Next.js 14 App Router, JavaScript (`.jsx`), sin TypeScript, sin backend. Basado en la plantilla comercial *Bantec*, pero las páginas de plantilla ya se eliminaron del repo: **todas las rutas que existen están en producción**. El README tiene la tabla completa de rutas y pendientes — léelo antes de tocar algo que no esté listado aquí.
+Sitio corporativo de Ingeniatex (Mérida, Yucatán). Next.js 14 App Router, JavaScript (`.jsx`), sin TypeScript, sin backend. Basado en la plantilla comercial *Bantec*,**todas las rutas que existen están en producción**. El README tiene la tabla completa de rutas y pendientes — léelo antes de tocar algo que no esté listado aquí.
 
 ## Comandos
 
@@ -22,9 +22,6 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 - `/about` → `components/pages/about/` (HeaderOne + FooterSix)
 - `/request-quote` → `components/pages/request-quote/` (HeaderOne + FooterFive)
 
-**Restos de plantilla que siguen en uso:** `components/pages/homes/home/work.jsx` y `components/pages/homes/home/testimonial.jsx` son piezas de la plantilla original reutilizadas por `/about`, `/proyectos` y `/services/[id]`; su texto sigue en inglés. Cuando el usuario diga "la home" se refiere a `home-5`, no a `homes/home/`.
-
-Las rutas y componentes de plantilla (`home-two`…`home-five`, `blog*`, `portfolio/*`, `team*`, `faq`, `pricing-plan`, `testimonial`, `contact`, `services-two`) se borraron; cualquier URL de esas cae en `app/[not-found]`. Si necesitas una sección de la plantilla como referencia, recupérala del historial de git.
 
 ## Dónde cambiar cada cosa
 
@@ -40,7 +37,8 @@ Las rutas y componentes de plantilla (`home-two`…`home-five`, `blog*`, `portfo
 | Datos de contacto del panel lateral | `components/layout/headers/offcanvas.jsx` |
 | Footer (CTA, links, teléfono, copyright) | `components/layout/footers/footer-five.jsx` (y `footer-six.jsx` para /about) |
 | Redes sociales | `components/data/social.jsx` |
-| Título de pestaña | prop `pageTitle` de `<SEO>` en el `index.jsx` de la página; sufijo global en `components/data/seo.jsx` |
+| Título de pestaña, description, canonical, Open Graph | `export const metadata` en el `app/*/page.jsx` de la ruta (en `/services/[id]` es `generateMetadata`); los valores globales y el dominio, en `components/data/site.jsx` |
+| Sitemap / robots / imagen de Open Graph | `app/sitemap.js`, `app/robots.js`, `app/opengraph-image.jsx` |
 | Estilos custom | final de `public/assets/sass/style.css` |
 | Texto "Quiénes somos" | `components/pages/about/about.jsx` |
 | Formulario de cotización | `components/pages/request-quote/request-quote.jsx` — dropdown de servicios desde `services-data`; si eligen `paginas-web` aparece un segundo select con los planes de `web-plans-data`. Estilos `.quote-form__*` al final de `style.css` |
@@ -60,8 +58,8 @@ Si cambias un dato de contacto, haz `grep -rn` del valor viejo en `components/` 
 ## Convenciones del código
 
 - Componentes funcionales con `export default`, un componente por archivo, nombres de archivo en kebab-case.
-- Las páginas en `app/*/page.jsx` son wrappers de una línea; la lógica y el layout viven en `components/pages/<pagina>/index.jsx` (que monta SEO + Header + Breadcrumb + contenido + Footer + ScrollToTop).
-- Los `index.jsx` de página y los headers llevan `"use client"`. `app/layout.jsx` también es cliente porque carga el JS de Bootstrap con `require` en un `useEffect`.
+- Las páginas en `app/*/page.jsx` son Server Components cortos: exportan `metadata` y montan el componente de `components/pages/<pagina>/index.jsx`, que lleva `"use client"` y arma Header + Breadcrumb + contenido + Footer + ScrollToTop.
+- Los `index.jsx` de página y los headers llevan `"use client"`. `app/layout.jsx` **no**: es Server Component para poder exportar `metadata`, y el JS de Bootstrap se carga desde `components/layout/bootstrap-loader.jsx`. No le agregues `"use client"`: rompería toda la metadata del sitio.
 - Imágenes: importar desde `public/assets/img/...` con ruta relativa y usar `<img src={img.src} />`. No usar `next/image` (la plantilla no lo usa; mantener consistencia).
 - Enlaces internos con `next/link`; externos con `<a target="_blank" rel="noopener noreferrer">`.
 - Clases CSS: BEM de la plantilla (`banner__five-content`, `services__five-single-service`…) + utilidades Bootstrap. Reutilizar clases existentes antes de crear nuevas.
@@ -70,17 +68,16 @@ Si cambias un dato de contacto, haz `grep -rn` del valor viejo en `components/` 
 
 ## Trampas conocidas
 
-- **`public/assets/sass/style.css` es la única hoja de estilos.** Los `.scss` originales y el sourcemap se eliminaron porque ya no generaban ese `.css` (tenía reglas custom que el `.scss` no incluía). No reintroducir un pipeline SCSS: editar el `.css` directamente.
+- **`public/assets/sass/style.css`editar el `.css` directamente.
 - `services-data.jsx`: la home (`#servicios`) muestra **todos** los servicios (grid 3+2) y los menús desktop/móvil listan todos en el dropdown; los footers muestran `slice(0,4)` con `shortTitle`. Al agregar un servicio, `/services/[id]`, el dropdown y el formulario lo toman solos; revisa que el grid de la home no quede raro.
-- La ruta `/services` (sin id) cae en `app/[not-found]` (página 404 con status 200, comportamiento de la plantilla). Los enlaces a "Servicios" deben apuntar a `/#servicios` o a `/services/<id>`.
+- La ruta `/services` (sin id) cae en `app/not-found.jsx`, que responde con status 404 real. Los enlaces a "Servicios" deben apuntar a `/#servicios` o a `/services/<id>`.
 - `components/pages/services/service-single/services-single.jsx` decide el contenido por id: `paginas-web` → bloque + planes; `integraciones` → `Solution`; resto → `ServiceBlock`. Un id nuevo cae en el caso genérico.
 - La plantilla aplica `text-transform: capitalize` a todo el `body`; en `.service-block` y `.web-plans` está desactivado (final de `style.css`).
 - **Nunca correr `npm run build` mientras `npm run dev` está activo**: comparten `.next` y el dev server queda sirviendo HTML sin CSS. Detener dev → build → `rm -rf .next` → dev de nuevo.
 - Los formularios tienen `action="#"`: no envían nada. Si el usuario pide "que funcione el formulario", hay que elegir un servicio (Formspree, Resend vía API route, EmailJS…) — preguntar cuál antes de implementar.
-- `<SEO>` solo cambia `document.title` en cliente; no hay metadata real para buscadores. Migrar a `export const metadata` de Next.js requiere quitar `"use client"` de las páginas, que hoy lo necesitan por los hooks del header.
+- El `<h1>` de la home es el título del banner (`home-5/banner.jsx`) y el de las páginas internas es el del breadcrumb (`common/breadcrumb.jsx`). Ambos usan reglas CSS que nombran `h1` y `h2` juntos; si cambias la etiqueta, revisa `.banner__five-content` y `.page__banner-content` al buscar en `style.css`.
 - `<label for=…>` aparece en varios formularios (debería ser `htmlFor`); genera warnings, no rompe el build.
 - `eslint-config-next@15` con `next@14`: el lint puede quejarse de reglas que no aplican. No subir Next a 15 sin pedirlo explícitamente.
-- `app/layout.jsx` tiene `<link rel="icon" href="../favicon.ico">`; el favicon real lo sirve Next desde `app/favicon.ico`.
 
 ## Al terminar un cambio
 

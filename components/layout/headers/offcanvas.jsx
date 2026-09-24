@@ -9,7 +9,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
                 <div className="sidebar-close-btn" onClick={() => setIsOpen(false)}><i className="fal fa-times"></i></div>
 				<div className="header__area-menubar-right-sidebar-popup-logo">
 				<Link href='/'>
-					<img className='logo_one' src={logo2.src} alt="logo" />
+					<img className='logo_one' src={logo2.src} alt="Ingeniatex" />
 				</Link>
 				</div>
 				<p>En Ingeniatex asumimos el compromiso de brindar soluciones digitales confiables y accesibles para tu empresa. Nos especializamos en el desarrollo de sitios web, aplicaciones, automatización de pruebas y consultoría tecnológica para ayudar a las empresas a crecer en un entorno cada vez más digital.</p>
