@@ -39,7 +39,7 @@ const slideControl = {
                             <div className="testimonial__one-left-title">
                                 <span className="subtitle-one">Client Testimonial</span>
                                 <h2>WebTech Solutions the <span className="highlighted">transfor</span> </h2>
-                                <Link href="/contact" className="btn-one">Get Support
+                                <Link href="/request-quote" className="btn-one">Contáctanos
                                     <i className="fas fa-arrow-right"></i>
                                 </Link>
                             </div>

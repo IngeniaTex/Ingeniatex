@@ -44,8 +44,6 @@ app/                         Rutas (App Router). Cada page.jsx solo monta un com
   about/                     /about
   request-quote/             /request-quote
   [not-found]/               404
-  home-two…five, blog, portfolio, team, faq, pricing-plan, testimonial, contact, services-two
-                             ← páginas de plantilla, sin personalizar
 
 components/
   data/
@@ -54,7 +52,7 @@ components/
     projects-data.jsx        Proyectos del portafolio (nombre, categoría, captura, URL)
     seo.jsx                  Componente <SEO pageTitle> → setea document.title en cliente
     social.jsx               Iconos de redes sociales (footer / offcanvas)
-    blog-data.jsx, team-data.jsx, portfolio-data.jsx   ← datos de plantilla
+    blog-data.jsx            Notas de la sección de blog de la home (home-5/blog.jsx)
   layout/
     headers/header/header-five.jsx   Header de la home
     headers/header/header-one.jsx    Header de páginas internas
@@ -75,8 +73,7 @@ components/
 public/assets/
   img/                       Imágenes (logo-1.png = logo principal, logo-2.png = logo menú móvil)
   img/projects/              Capturas de los sitios del portafolio
-  sass/style.css             Hoja de estilos principal de la plantilla (+ estilos custom)
-  sass/style.scss            Fuente SCSS original — NO está sincronizada con style.css
+  sass/style.css             ÚNICA hoja de estilos del sitio (plantilla + estilos custom al final)
   css/, flaticon/, webfonts/ Librerías de terceros
 ```
 
@@ -91,8 +88,8 @@ Alias de importación: `@/*` apunta a la raíz del repo (`jsconfig.json`).
 | `/proyectos` | ✅ Personalizada | `projects` — portafolio con captura y enlace a cada sitio |
 | `/about` | ✅ Personalizada | `about` (HeaderOne, Breadcrumb, AboutMain, FooterSix) |
 | `/request-quote` | ✅ Personalizada, **sin backend** | `request-quote` — el `<form action="#">` no envía nada |
-| `/contact` | ⚠️ Plantilla en inglés | `contacts` — el footer enlaza a esta ruta |
-| `/home-two`…`/home-five`, `/blog*`, `/portfolio/*`, `/team*`, `/faq`, `/pricing-plan`, `/testimonial`, `/services-two` | ❌ Plantilla | Sin enlaces desde el menú, pero accesibles por URL |
+
+No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-five`, `/blog*`, `/portfolio/*`, `/team*`, `/faq`, `/pricing-plan`, `/testimonial`, `/services-two`) se eliminaron del repo y ahora caen en la 404. Para recuperar alguna como referencia, búscala en el historial de git.
 
 ## Datos de contacto (dónde están hardcodeados)
 
@@ -113,18 +110,16 @@ Alias de importación: `@/*` apunta a la raíz del repo (`jsconfig.json`).
 - **Proyectos** (`/proyectos`) → `components/data/projects-data.jsx`. Para agregar uno: captura del sitio en `public/assets/img/projects/` (1280×680 recortado desde arriba) + su entrada en el array.
 - **Menú** → `components/layout/headers/header-menu.jsx` (desktop) **y** `components/layout/headers/mobile-menu/responsive-menu.jsx` (móvil). Hay que actualizar los dos. El dropdown de servicios se arma solo desde `services-data`.
 - **Título de pestaña** → prop `pageTitle` del componente `<SEO>` en el `index.jsx` de cada página. El sufijo " - Páginas web y Automatización" se agrega en `components/data/seo.jsx`.
-- **Estilos custom** → agregar al final de `public/assets/sass/style.css`. No recompilar `style.scss`: el `.css` contiene reglas (p. ej. `.whatsapp-button`) que no existen en el `.scss`.
+- **Estilos custom** → agregar al final de `public/assets/sass/style.css`. Es la única hoja de estilos: los `.scss` originales se eliminaron porque ya no generaban ese archivo.
 - **Imágenes** → `public/assets/img/…`, importadas como módulo y usadas con `.src` (`<img src={logo.src} />`).
 
 ## Pendientes conocidos
 
-- Conectar los formularios de `/request-quote` y `/contact` a un servicio de envío (Formspree, Resend, API route, etc.).
-- Personalizar o eliminar `/contact` y las páginas de plantilla que no se usan.
+- Conectar el formulario de `/request-quote` a un servicio de envío (Formspree, Resend, API route, etc.).
 - Limpiar el menú móvil (`responsive-menu.jsx`): aún muestra Home 01–05, Pages, Team, etc.
 - Reemplazar enlaces genéricos de redes sociales en `data/social.jsx`.
 - Corregir `mailto:` en `offcanvas.jsx` y el `<link rel="icon" href="../favicon.ico">` en `app/layout.jsx`.
-- Archivos duplicados sin uso: `components/data/services-data copy.jsx`, `homes/home-2/blog copy.jsx`, `services/service-single/services-single copy.jsx`, `public/assets/img/logo-1 copy.png`.
-- Los `<label for=…>` de `contacts/form.jsx` deberían ser `htmlFor` (JSX).
+- Los `<label for=…>` de los formularios deberían ser `htmlFor` (JSX).
 - El año del copyright está fijo (`© Ingeniatex 2025`) en `footer-five.jsx`.
 - Migrar `<SEO>` (título en cliente) a la Metadata API de Next.js para SEO real.
 - `eslint-config-next` está en 15.5.0 mientras `next` está en 14.2.5; conviene alinearlos.

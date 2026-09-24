@@ -1,6 +1,6 @@
 # CLAUDE.md — Ingeniatex
 
-Sitio corporativo de Ingeniatex (Mérida, Yucatán). Next.js 14 App Router, JavaScript (`.jsx`), sin TypeScript, sin backend. Basado en la plantilla comercial *Bantec*; la mayoría de las páginas son restos de plantilla y solo unas pocas están en producción. El README tiene la tabla completa de rutas y pendientes — léelo antes de tocar algo que no esté listado aquí.
+Sitio corporativo de Ingeniatex (Mérida, Yucatán). Next.js 14 App Router, JavaScript (`.jsx`), sin TypeScript, sin backend. Basado en la plantilla comercial *Bantec*, pero las páginas de plantilla ya se eliminaron del repo: **todas las rutas que existen están en producción**. El README tiene la tabla completa de rutas y pendientes — léelo antes de tocar algo que no esté listado aquí.
 
 ## Comandos
 
@@ -22,7 +22,9 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 - `/about` → `components/pages/about/` (HeaderOne + FooterSix)
 - `/request-quote` → `components/pages/request-quote/` (HeaderOne + FooterFive)
 
-**Plantilla sin personalizar** (no editar salvo que se pida explícitamente): `home-two`…`home-five`, `blog*`, `portfolio/*`, `team*`, `faq`, `pricing-plan`, `testimonial`, `contact`, `services-two`, y sus componentes en `components/pages/`. Cuando el usuario diga "la home" se refiere a `home-5`, no a `homes/home/`.
+**Restos de plantilla que siguen en uso:** `components/pages/homes/home/work.jsx` y `components/pages/homes/home/testimonial.jsx` son piezas de la plantilla original reutilizadas por `/about`, `/proyectos` y `/services/[id]`; su texto sigue en inglés. Cuando el usuario diga "la home" se refiere a `home-5`, no a `homes/home/`.
+
+Las rutas y componentes de plantilla (`home-two`…`home-five`, `blog*`, `portfolio/*`, `team*`, `faq`, `pricing-plan`, `testimonial`, `contact`, `services-two`) se borraron; cualquier URL de esas cae en `app/[not-found]`. Si necesitas una sección de la plantilla como referencia, recupérala del historial de git.
 
 ## Dónde cambiar cada cosa
 
@@ -68,7 +70,7 @@ Si cambias un dato de contacto, haz `grep -rn` del valor viejo en `components/` 
 
 ## Trampas conocidas
 
-- **`style.css` no se genera desde `style.scss`.** El `.css` tiene reglas custom (`.whatsapp-button`, etc.) que no están en el `.scss`. Nunca recompilar SCSS ni sobrescribir `style.css`; editar el `.css` directamente.
+- **`public/assets/sass/style.css` es la única hoja de estilos.** Los `.scss` originales y el sourcemap se eliminaron porque ya no generaban ese `.css` (tenía reglas custom que el `.scss` no incluía). No reintroducir un pipeline SCSS: editar el `.css` directamente.
 - `services-data.jsx`: la home (`#servicios`) muestra **todos** los servicios (grid 3+2) y los menús desktop/móvil listan todos en el dropdown; los footers muestran `slice(0,4)` con `shortTitle`. Al agregar un servicio, `/services/[id]`, el dropdown y el formulario lo toman solos; revisa que el grid de la home no quede raro.
 - La ruta `/services` (sin id) cae en `app/[not-found]` (página 404 con status 200, comportamiento de la plantilla). Los enlaces a "Servicios" deben apuntar a `/#servicios` o a `/services/<id>`.
 - `components/pages/services/service-single/services-single.jsx` decide el contenido por id: `paginas-web` → bloque + planes; `integraciones` → `Solution`; resto → `ServiceBlock`. Un id nuevo cae en el caso genérico.
@@ -77,7 +79,6 @@ Si cambias un dato de contacto, haz `grep -rn` del valor viejo en `components/` 
 - Los formularios tienen `action="#"`: no envían nada. Si el usuario pide "que funcione el formulario", hay que elegir un servicio (Formspree, Resend vía API route, EmailJS…) — preguntar cuál antes de implementar.
 - `<SEO>` solo cambia `document.title` en cliente; no hay metadata real para buscadores. Migrar a `export const metadata` de Next.js requiere quitar `"use client"` de las páginas, que hoy lo necesitan por los hooks del header.
 - `<label for=…>` aparece en varios formularios (debería ser `htmlFor`); genera warnings, no rompe el build.
-- Hay archivos `* copy.jsx` / `* copy.png` sin uso; no importarlos ni tomarlos como referencia.
 - `eslint-config-next@15` con `next@14`: el lint puede quejarse de reglas que no aplican. No subir Next a 15 sin pedirlo explícitamente.
 - `app/layout.jsx` tiene `<link rel="icon" href="../favicon.ico">`; el favicon real lo sirve Next desde `app/favicon.ico`.
 
