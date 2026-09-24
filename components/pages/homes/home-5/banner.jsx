@@ -18,7 +18,7 @@ const BannerFive = () => {
                         <div className="col-xl-7 col-lg-6">
                             <div className="banner__five-content">
                                 <span className="subtitle-one">Impulsa tu crecimiento </span>
-                                <h2>Soluciones digitales para tu negocio</h2>
+                                <h1>Soluciones digitales para tu negocio</h1>
                                 <p>Diseñamos páginas web, soluciones personalizadas e integraciones digitales que ayudan
                                 a tu negocio a crecer y trabajar de manera más eficiente.</p>
                                 <div className="banner__five-content-bottom flex gap-4">
@@ -41,8 +41,8 @@ const BannerFive = () => {
                         <div className="col-xl-5 col-lg-6 col-md-9">
                             <div className="banner__five-image">
                                 <div className="banner__five-image-wrapper">
-                                    <img src={banner1.src} alt="image" />
-                                    <img src={banner2.src} className="img-2 animate-y-axis" alt="image" />
+                                    <img src={banner1.src} alt="Equipo de Ingeniatex trabajando en el desarrollo de una página web" />
+                                    <img src={banner2.src} className="img-2 animate-y-axis" alt="Panel de métricas de un sitio web" />
                                 </div>
                             </div>
                         </div>

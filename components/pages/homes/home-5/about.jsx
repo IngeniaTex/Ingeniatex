@@ -19,36 +19,36 @@ const AboutFive = () => {
                             <div className="text-slide">
                                 <div className="sliders scroll">
                                     <div className="brand__area-item">
-                                        <img src={brand1.src} alt="image" />
+                                        <img src={brand1.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand2.src} alt="image" />
+                                        <img src={brand2.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand3.src} alt="image" />
+                                        <img src={brand3.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand4.src} alt="image" />
+                                        <img src={brand4.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand5.src} alt="image" />
+                                        <img src={brand5.src} alt="" aria-hidden="true" />
                                     </div>
                                 </div>
                                 <div className="sliders scroll">
                                     <div className="brand__area-item">
-                                        <img src={brand1.src} alt="image" />
+                                        <img src={brand1.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand2.src} alt="image" />
+                                        <img src={brand2.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand3.src} alt="image" />
+                                        <img src={brand3.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand4.src} alt="image" />
+                                        <img src={brand4.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand5.src} alt="image" />
+                                        <img src={brand5.src} alt="" aria-hidden="true" />
                                     </div>
                                 </div>
                             </div>
@@ -61,8 +61,8 @@ const AboutFive = () => {
                     <div className="col-xl-6 col-lg-8">
                         <div className="about__five-image">
                             <div className="about__five-image-wrapper">
-                                <img src={about1.src} alt="image" />
-                                <img src={about2.src} alt="image" className="image-2 animate-y-axis-slider" />
+                                <img src={about1.src} alt="Equipo de Ingeniatex trabajando en un proyecto web" />
+                                <img src={about2.src} alt="" aria-hidden="true" className="image-2 animate-y-axis-slider" />
                             </div>
                         </div>
                     </div>

@@ -30,8 +30,8 @@ const AboutMain = () => {
                                 </div>
                             </div>
                             <div className="about__one-image-wrapper">
-                                <img src={about1.src} alt="image" className="image-1" />
-                                <img src={about2.src} alt="image" className="image-2" />
+                                <img src={about1.src} alt="Equipo de Ingeniatex en Mérida, Yucatán" className="image-1" />
+                                <img src={about2.src} alt="" aria-hidden="true" className="image-2" />
                             </div>
                         </div>
                     </div>
@@ -74,36 +74,36 @@ const AboutMain = () => {
                             <div className="text-slide">
                                 <div className="sliders scroll">
                                     <div className="brand__area-item">
-                                        <img src={brand1.src} alt="image" />
+                                        <img src={brand1.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand2.src} alt="image" />
+                                        <img src={brand2.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand3.src} alt="image" />
+                                        <img src={brand3.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand4.src} alt="image" />
+                                        <img src={brand4.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand5.src} alt="image" />
+                                        <img src={brand5.src} alt="" aria-hidden="true" />
                                     </div>
                                 </div>
                                 <div className="sliders scroll">
                                     <div className="brand__area-item">
-                                        <img src={brand1.src} alt="image" />
+                                        <img src={brand1.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand2.src} alt="image" />
+                                        <img src={brand2.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand3.src} alt="image" />
+                                        <img src={brand3.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand4.src} alt="image" />
+                                        <img src={brand4.src} alt="" aria-hidden="true" />
                                     </div>
                                     <div className="brand__area-item">
-                                        <img src={brand5.src} alt="image" />
+                                        <img src={brand5.src} alt="" aria-hidden="true" />
                                     </div>
                                 </div>
                             </div>

@@ -18,7 +18,7 @@ const BlogFive = () => {
                         <div className="col-xl-4 col-lg-6" key={id}>
                             <div className="blog__five-single-blog">
                                 <div className="blog__five-single-blog-img">
-                                    <Link href={`/blog/${data.id}`}><img src={data.image.src} alt="blog" /></Link>
+                                    <Link href={`/blog/${data.id}`}><img src={data.image.src} alt={data.title} /></Link>
                                     <div className="blog__five-single-blog-date">
                                         <span className="date">{data.date}</span>
                                         <span className="month">Mar</span>

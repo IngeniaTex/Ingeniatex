@@ -9,8 +9,8 @@ const Choose = () => {
                 <div className="row gy-4 align-items-center">
                     <div className="col-xl-6 col-lg-6 col-md-10">
                         <div className="why-choose-us__four-image">
-                            <img src={image1.src} alt="image" className="why-choose-us__four-floating-image animate-y-axis-slider" />
-                            <img src={image2.src} alt="image" />
+                            <img src={image1.src} alt="" aria-hidden="true" className="why-choose-us__four-floating-image animate-y-axis-slider" />
+                            <img src={image2.src} alt="Equipo de Ingeniatex desarrollando un sitio web" />
                         </div>
                     </div>
                     <div className="col-xl-5 col-lg-7 col-md-9">
