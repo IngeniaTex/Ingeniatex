@@ -6,6 +6,9 @@ import rodher from "../../public/assets/img/projects/rodher.png";
 import pok from "../../public/assets/img/projects/pok.png";
 import serviciosDemo from "../../public/assets/img/projects/servicios-demo.png";
 import doctorDemo from "../../public/assets/img/projects/doctor-demo.png";
+import deliverySignIn from "../../public/assets/img/projects/delivery-1.png";
+import deliveryHome from "../../public/assets/img/projects/delivery-2.png";
+import deliveryCart from "../../public/assets/img/projects/delivery-3.png";
 
 const projectsData = [
     {
@@ -55,6 +58,15 @@ const projectsData = [
       description: 'Ejemplo para una cardióloga: servicios, testimonios, preguntas frecuentes y agenda de citas por WhatsApp.',
       image: doctorDemo,
       url: 'https://doctor-demo-wheat.vercel.app/',
+    },
+    {
+      // App móvil: en lugar de una captura horizontal muestra varias pantallas
+      // (images). Sin url, la tarjeta no es un enlace.
+      id: 'delivery-demo',
+      name: 'Demo - App de delivery para restaurantes',
+      category: 'Demo · Aplicación móvil',
+      description: 'Ejemplo de app para pedidos a domicilio: menú con ofertas del día, platillos recomendados, carrito de compra e inicio de sesión de clientes.',
+      images: [deliveryHome, deliveryCart, deliverySignIn],
     },
   ];
 
