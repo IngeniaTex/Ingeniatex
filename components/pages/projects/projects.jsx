@@ -13,26 +13,47 @@ const Projects = () => {
                     </div>
                 </div>
                 <div className="row gy-4 justify-content-center">
-                    {projectsData.map((project) => (
-                        <div className="col-xl-6 col-lg-6 col-md-6 d-flex" key={project.id}>
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="projects__card"
-                            >
-                                <div className="projects__card-image">
-                                    <img src={project.image.src} alt={`Sitio web de ${project.name}`} loading="lazy" />
-                                </div>
+                    {projectsData.map((project) => {
+                        const content = (
+                            <>
+                                {project.images ? (
+                                    <div className="projects__card-image projects__card-image--screens">
+                                        {project.images.map((image, i) => (
+                                            <img key={i} src={image.src} alt={`Pantalla ${i + 1} de ${project.name}`} loading="lazy" />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="projects__card-image">
+                                        <img src={project.image.src} alt={`Sitio web de ${project.name}`} loading="lazy" />
+                                    </div>
+                                )}
                                 <div className="projects__card-content">
                                     <span className="projects__card-category">{project.category}</span>
                                     <h4>{project.name}</h4>
                                     <p>{project.description}</p>
-                                    <span className="projects__card-link">Visitar sitio<i className="fas fa-arrow-right"></i></span>
+                                    {project.url && (
+                                        <span className="projects__card-link">Visitar sitio<i className="fas fa-arrow-right"></i></span>
+                                    )}
                                 </div>
-                            </a>
-                        </div>
-                    ))}
+                            </>
+                        );
+                        return (
+                            <div className="col-xl-6 col-lg-6 col-md-6 d-flex" key={project.id}>
+                                {project.url ? (
+                                    <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="projects__card"
+                                    >
+                                        {content}
+                                    </a>
+                                ) : (
+                                    <div className="projects__card">{content}</div>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>

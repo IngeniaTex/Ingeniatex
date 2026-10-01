@@ -11855,6 +11855,26 @@ Responsive Menu Css
     padding: 24px 22px 26px 22px;
   }
 }
+/* Tarjeta de app móvil: varias pantallas verticales lado a lado */
+.projects__card-image--screens {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 22px 0 22px;
+}
+.projects__card-image--screens img {
+  width: auto;
+  height: 100%;
+  min-width: 0;
+  flex: 0 1 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.12);
+}
 
 /*==========================================================================
 * Ingeniatex – CTA a proyectos debajo de los planes
