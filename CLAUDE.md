@@ -13,6 +13,8 @@ npm run lint
 
 No hay tests. Verificación = `npm run build` sin errores + revisar la página en el navegador.
 
+**Hosting: Cloudflare Workers, sitio estático** (`output: "export"` → `out/`, configurado en `wrangler.jsonc`; cabeceras en `public/_headers`). Requiere Node 22+ (`.nvmrc`). `npm run start` / `preview` / `deploy` usan Wrangler. Por ser export estático **no hay** API routes, `headers()`, `cookies()`, middleware ni ISR: si un cambio los necesita, avisar antes (implica migrar a `@opennextjs/cloudflare`).
+
 ## Qué está vivo y qué no
 
 **Rutas personalizadas (las únicas que importan):**
@@ -74,7 +76,7 @@ Si cambias un dato de contacto, haz `grep -rn` del valor viejo en `components/` 
 - `components/pages/services/service-single/services-single.jsx` decide el contenido por id: `paginas-web` → bloque + planes; `integraciones` → `Solution`; resto → `ServiceBlock`. Un id nuevo cae en el caso genérico.
 - La plantilla aplica `text-transform: capitalize` a todo el `body`; en `.service-block` y `.web-plans` está desactivado (final de `style.css`).
 - **Nunca correr `npm run build` mientras `npm run dev` está activo**: comparten `.next` y el dev server queda sirviendo HTML sin CSS. Detener dev → build → `rm -rf .next` → dev de nuevo.
-- Los formularios tienen `action="#"`: no envían nada. Si el usuario pide "que funcione el formulario", hay que elegir un servicio (Formspree, Resend vía API route, EmailJS…) — preguntar cuál antes de implementar.
+- Los formularios tienen `action="#"`: no envían nada. Si el usuario pide "que funcione el formulario", hay que elegir un servicio (Formspree, EmailJS…; Resend vía API route no es posible con el export estático) — preguntar cuál antes de implementar.
 - El `<h1>` de la home es el título del banner (`home-5/banner.jsx`) y el de las páginas internas es el del breadcrumb (`common/breadcrumb.jsx`). Ambos usan reglas CSS que nombran `h1` y `h2` juntos; si cambias la etiqueta, revisa `.banner__five-content` y `.page__banner-content` al buscar en `style.css`.
 - `<label for=…>` aparece en varios formularios (debería ser `htmlFor`); genera warnings, no rompe el build.
 - `eslint-config-next@15` con `next@14`: el lint puede quejarse de reglas que no aplican. No subir Next a 15 sin pedirlo explícitamente.

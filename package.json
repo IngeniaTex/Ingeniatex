@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "wrangler dev",
+    "lint": "next lint",
+    "preview": "next build && wrangler dev",
+    "deploy": "next build && wrangler deploy"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -19,6 +21,10 @@
   },
   "devDependencies": {
     "eslint": "8.57.1",
-    "eslint-config-next": "15.5.0"
+    "eslint-config-next": "15.5.0",
+    "wrangler": "^4.147.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
