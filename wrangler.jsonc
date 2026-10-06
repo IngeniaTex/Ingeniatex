@@ -1,0 +1,14 @@
+{
+  // Despliegue en Cloudflare Workers (solo archivos estáticos, sin código de servidor).
+  // `npm run build` genera out/ y `npm run deploy` lo sube.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ingeniatex",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    // /about sirve about.html; /about.html redirige a /about.
+    "html_handling": "auto-trailing-slash",
+    // Rutas inexistentes (incluida /services) responden 404.html con status 404.
+    "not_found_handling": "404-page"
+  }
+}

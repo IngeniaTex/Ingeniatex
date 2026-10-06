@@ -127,7 +127,25 @@ No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-f
 
 ## Despliegue
 
-No hay configuración de despliegue en el repo. Es una app Next.js estándar: `npm run build` + `npm run start`, o despliegue directo en Vercel/Netlify desde `main`.
+El sitio se publica en **Cloudflare Workers** como sitio estático. No hay código de servidor.
+
+- `next.config.mjs` usa `output: "export"`: `npm run build` genera todo el sitio en `out/`.
+- `wrangler.jsonc` le dice a Cloudflare que sirva `out/`. `/about` sirve `about.html`, y las rutas inexistentes (incluida `/services`) responden `404.html` con status 404.
+- `public/_headers` define las cabeceras: `Content-Type` de `/opengraph-image` (se exporta sin extensión) y caché larga para `/_next/static/*`.
+- Requiere **Node 22+** (Wrangler no corre en 20). Ver `.nvmrc` (`nvm use`).
+
+```bash
+npm run build     # genera out/
+npm run start     # sirve out/ localmente con Wrangler (localhost:8787)
+npm run preview   # build + start
+npm run deploy    # build + sube a Cloudflare (requiere `npx wrangler login` una vez)
+```
+
+**Despliegue automático (recomendado):** en el dashboard de Cloudflare → Workers & Pages → Create → *Import a repository* → `IngeniaTex/Ingeniatex`. Build command: `npm run build`. Deploy command: `npx wrangler deploy`. Cada push a `main` publica, y cada PR genera una URL de vista previa.
+
+**Dominio:** el canónico es `https://www.ingeniatex.com` (`components/data/site.jsx`). En el Worker → Settings → Domains & Routes se agregan `www.ingeniatex.com` e `ingeniatex.com`. La redirección 301 de `ingeniatex.com` → `www` se configura en la zona con una *Redirect Rule*.
+
+Restricción de la exportación estática: no se pueden usar API routes, `headers()`/`cookies()`, middleware ni `next/image` con optimización. Si algún día se necesita backend (p. ej. enviar el formulario con Resend), habría que migrar a `@opennextjs/cloudflare` o usar un servicio externo como Formspree.
 
 ## Flujo de trabajo
 

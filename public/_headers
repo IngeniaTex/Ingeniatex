@@ -1,0 +1,10 @@
+# Cabeceras para Cloudflare (se copia a out/ en el build).
+
+# La imagen de Open Graph se exporta sin extensión; sin esto se serviría
+# como application/octet-stream y las redes no mostrarían la vista previa.
+/opengraph-image
+  Content-Type: image/png
+
+# Los archivos de _next/static llevan hash en el nombre: se pueden cachear para siempre.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
