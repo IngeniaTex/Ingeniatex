@@ -2,11 +2,45 @@
 import { useState } from "react";
 import servicesData from "@/components/data/services-data";
 import webPlansData from "@/components/data/web-plans-data";
+import Turnstile from "./turnstile";
 
-// Formulario de cotización. Sin backend por ahora (action="#").
+// Formulario de cotización. Se envía a POST /api/cotizacion (worker/index.js),
+// que valida Turnstile y manda el correo a ypz.omar@gmail.com.
 // Los servicios y planes del dropdown salen de services-data / web-plans-data.
 const RequestQuoteMain = () => {
     const [service, setService] = useState("");
+    // idle | sending | success | error
+    const [status, setStatus] = useState("idle");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [attempt, setAttempt] = useState(0);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const data = new FormData(form);
+        // Además del id, mandamos el nombre legible del servicio y del plan para el correo.
+        data.set("service-label", form.service.selectedOptions[0]?.text || "");
+        if (form.plan) {
+            data.set("plan-label", form.plan.selectedOptions[0]?.text || "");
+        }
+
+        setStatus("sending");
+        try {
+            const res = await fetch("/api/cotizacion", { method: "POST", body: data });
+            const result = await res.json().catch(() => ({}));
+            if (!res.ok || !result.ok) {
+                throw new Error(result.error || "No pudimos enviar tu solicitud. Escríbenos por WhatsApp.");
+            }
+            form.reset();
+            setService("");
+            setStatus("success");
+        } catch (err) {
+            setErrorMessage(err.message);
+            setStatus("error");
+        } finally {
+            setAttempt((n) => n + 1);
+        }
+    };
 
     return (
         <div className="request-quote__area quote-form section-padding">
@@ -19,7 +53,7 @@ const RequestQuoteMain = () => {
                                 <h3>Cuéntanos sobre tu proyecto</h3>
                                 <p>Completa el formulario y te respondemos con una propuesta a la medida. Sin compromiso.</p>
                             </div>
-                            <form action="#">
+                            <form onSubmit={handleSubmit}>
                                 <div className="request-quote__area-inputs">
                                     <div className="request-quote__area-input-field">
                                         <label htmlFor="first-name">Nombre *</label>
@@ -85,13 +119,29 @@ const RequestQuoteMain = () => {
                                         required
                                     ></textarea>
                                 </div>
+                                <Turnstile resetKey={attempt} />
                                 <div className="quote-form__footer">
-                                    <button type="submit" className="btn-two">Enviar solicitud<i className="fas fa-arrow-right"></i></button>
+                                    <button type="submit" className="btn-two" disabled={status === "sending"}>
+                                        {status === "sending" ? "Enviando…" : "Enviar solicitud"}
+                                        <i className="fas fa-arrow-right"></i>
+                                    </button>
                                     <p className="quote-form__privacy">
                                         <i className="fas fa-lock"></i>
                                         Tus datos solo se usan para responder a tu solicitud.
                                     </p>
                                 </div>
+                                {status === "success" && (
+                                    <p className="quote-form__status quote-form__status--success" role="status">
+                                        <i className="fas fa-check-circle"></i>
+                                        ¡Gracias! Recibimos tu solicitud y te respondemos en menos de 24 horas hábiles.
+                                    </p>
+                                )}
+                                {status === "error" && (
+                                    <p className="quote-form__status quote-form__status--error" role="alert">
+                                        <i className="fas fa-exclamation-circle"></i>
+                                        {errorMessage}
+                                    </p>
+                                )}
                             </form>
                         </div>
                     </div>
