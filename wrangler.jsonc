@@ -21,7 +21,15 @@
   "send_email": [
     { "name": "EMAIL", "destination_address": "ypz.omar@gmail.com" }
   ],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Vistas previas (builds de ramas que no son main, vía `wrangler preview`).
+  // No heredan los bindings de arriba: hay que repetirlos aquí.
+  "previews": {
+    "send_email": [
+      { "name": "EMAIL", "destination_address": "ypz.omar@gmail.com" }
+    ],
+    "observability": { "enabled": true }
+  }
   // Secreto requerido (no va en este archivo):
   //   TURNSTILE_SECRET_KEY → `npx wrangler secret put TURNSTILE_SECRET_KEY`
   //   En local va en .dev.vars (ver .dev.vars.example).
