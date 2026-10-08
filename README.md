@@ -89,7 +89,7 @@ Alias de importación: `@/*` apunta a la raíz del repo (`jsconfig.json`).
 | `/services/[id]` | ✅ Personalizada (SSG) | `services/service-single` — una página por servicio; `paginas-web` incluye los planes Starter/Business/Pro |
 | `/proyectos` | ✅ Personalizada | `projects` — portafolio con captura y enlace a cada sitio |
 | `/about` | ✅ Personalizada | `about` (HeaderOne, Breadcrumb, AboutMain, FooterSix) |
-| `/request-quote` | ✅ Personalizada, **sin backend** | `request-quote` — el `<form action="#">` no envía nada |
+| `/request-quote` | ✅ Personalizada | `request-quote` — envía a `/api/cotizacion` (ver [Formulario de cotización](#formulario-de-cotización)) |
 
 No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-five`, `/blog*`, `/portfolio/*`, `/team*`, `/faq`, `/pricing-plan`, `/testimonial`, `/services-two`) se eliminaron del repo y ahora caen en la 404. Para recuperar alguna como referencia, búscala en el historial de git.
 
@@ -117,7 +117,6 @@ No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-f
 
 ## Pendientes conocidos
 
-- Conectar el formulario de `/request-quote` a un servicio de envío (Formspree, Resend, API route, etc.).
 - Limpiar el menú móvil (`responsive-menu.jsx`): aún muestra Home 01–05, Pages, Team, etc.
 - Reemplazar enlaces genéricos de redes sociales en `data/social.jsx`.
 - Corregir el `mailto:` de `offcanvas.jsx`, que apunta a otro correo.
@@ -127,7 +126,7 @@ No hay más rutas: las páginas de plantilla (`/contact`, `/home-two`…`/home-f
 
 ## Despliegue
 
-El sitio se publica en **Cloudflare Workers** como sitio estático. No hay código de servidor.
+El sitio se publica en **Cloudflare Workers** como sitio estático. El único código de servidor es `worker/index.js`, que atiende `/api/*`.
 
 - `next.config.mjs` usa `output: "export"`: `npm run build` genera todo el sitio en `out/`.
 - `wrangler.jsonc` le dice a Cloudflare que sirva `out/`. `/about` sirve `about.html`, y las rutas inexistentes (incluida `/services`) responden `404.html` con status 404.
@@ -145,7 +144,21 @@ npm run deploy    # build + sube a Cloudflare (requiere `npx wrangler login` una
 
 **Dominio:** el canónico es `https://www.ingeniatex.com` (`components/data/site.jsx`). En el Worker → Settings → Domains & Routes se agregan `www.ingeniatex.com` e `ingeniatex.com`. La redirección 301 de `ingeniatex.com` → `www` se configura en la zona con una *Redirect Rule*.
 
-Restricción de la exportación estática: no se pueden usar API routes, `headers()`/`cookies()`, middleware ni `next/image` con optimización. Si algún día se necesita backend (p. ej. enviar el formulario con Resend), habría que migrar a `@opennextjs/cloudflare` o usar un servicio externo como Formspree.
+Restricción de la exportación estática: no se pueden usar API routes de Next, `headers()`/`cookies()`, middleware ni `next/image` con optimización. Lo que necesite servidor se agrega en `worker/index.js` bajo `/api/*`.
+
+### Formulario de cotización
+
+`/request-quote` envía a `POST /api/cotizacion` (`worker/index.js`), que valida el captcha de **Cloudflare Turnstile** y manda la solicitud por correo a `ypz.omar@gmail.com` con **Cloudflare Email Routing**. El correo llega desde `cotizaciones@ingeniatex.com` con `Reply-To` del cliente, así que basta con responder.
+
+Configuración en Cloudflare (una sola vez):
+
+1. **Email Routing** (zona `ingeniatex.com` → Email → Email Routing): activarlo y verificar `ypz.omar@gmail.com` en *Destination addresses* (Cloudflare manda un correo de confirmación). ⚠️ Activarlo cambia los registros MX del dominio: si el buzón de `info@` vive en otro proveedor (Google Workspace, Zoho…), revisar antes cómo convivirá, o dejarás de recibir correo ahí.
+2. **Turnstile** (dashboard → Turnstile → Add widget): hostnames `ingeniatex.com`, `www.ingeniatex.com` y `localhost`; modo *Managed*. Da dos claves:
+   - Site key → variable de **build** del Worker: `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (Settings → Build → Variables).
+   - Secret key → **secreto** del Worker: `TURNSTILE_SECRET_KEY` (Settings → Variables and Secrets, tipo *Secret*, o `npx wrangler secret put TURNSTILE_SECRET_KEY`).
+3. Volver a desplegar.
+
+Probar en local: `cp .dev.vars.example .dev.vars` y `npm run preview`. Se usan las claves de prueba de Turnstile (siempre aprueban) y Wrangler simula el envío: guarda el correo como `.eml` y muestra la ruta en la terminal. Con `npm run dev` el formulario muestra error porque `/api/*` no existe en el servidor de Next.
 
 ## Flujo de trabajo
 

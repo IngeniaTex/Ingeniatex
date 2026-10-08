@@ -11274,6 +11274,33 @@ Responsive Menu Css
 .quote-form__privacy i {
   color: var(--primary-color-1);
 }
+.quote-form__turnstile {
+  margin-top: 24px;
+}
+.quote-form__turnstile:empty {
+  display: none;
+}
+.quote-form__footer .btn-two:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+.quote-form__status {
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.quote-form__status--success {
+  background: #e7f6ec;
+  color: #1c7c3c;
+}
+.quote-form__status--error {
+  background: #fdecec;
+  color: #b42318;
+}
 .quote-form__aside {
   background: var(--bg-heading-color);
   color: var(--text-white);

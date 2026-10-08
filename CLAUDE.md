@@ -13,7 +13,7 @@ npm run lint
 
 No hay tests. Verificación = `npm run build` sin errores + revisar la página en el navegador.
 
-**Hosting: Cloudflare Workers, sitio estático** (`output: "export"` → `out/`, configurado en `wrangler.jsonc`; cabeceras en `public/_headers`). Requiere Node 22+ (`.nvmrc`). `npm run start` / `preview` / `deploy` usan Wrangler. Por ser export estático **no hay** API routes, `headers()`, `cookies()`, middleware ni ISR: si un cambio los necesita, avisar antes (implica migrar a `@opennextjs/cloudflare`).
+**Hosting: Cloudflare Workers, sitio estático + un Worker para `/api/*`** (`output: "export"` → `out/`, configurado en `wrangler.jsonc`; cabeceras en `public/_headers`). Requiere Node 22+ (`.nvmrc`). `npm run start` / `preview` / `deploy` usan Wrangler. Por ser export estático **no hay** API routes de Next, `headers()`, `cookies()`, middleware ni ISR. Lo que necesite servidor va en `worker/index.js` bajo `/api/*` (hoy solo `POST /api/cotizacion`). Bajo `npm run dev` (localhost:3000) `/api/*` no existe: para probar el formulario usar `npm run preview` con `.dev.vars` (copiar de `.dev.vars.example`).
 
 ## Qué está vivo y qué no
 
@@ -43,7 +43,7 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 | Sitemap / robots / imagen de Open Graph | `app/sitemap.js`, `app/robots.js`, `app/opengraph-image.jsx` |
 | Estilos custom | final de `public/assets/sass/style.css` |
 | Texto "Quiénes somos" | `components/pages/about/about.jsx` |
-| Formulario de cotización | `components/pages/request-quote/request-quote.jsx` — dropdown de servicios desde `services-data`; si eligen `paginas-web` aparece un segundo select con los planes de `web-plans-data`. Estilos `.quote-form__*` al final de `style.css` |
+| Formulario de cotización | `components/pages/request-quote/request-quote.jsx` — dropdown de servicios desde `services-data`; si eligen `paginas-web` aparece un segundo select con los planes de `web-plans-data`. Envía a `POST /api/cotizacion` → `worker/index.js` (valida Turnstile y manda el correo con Cloudflare Email Routing a ypz.omar@gmail.com). Anti-spam: `request-quote/turnstile.jsx`, clave pública `TURNSTILE_SITE_KEY` en `site.jsx`. Estilos `.quote-form__*` al final de `style.css` |
 
 ## Datos de negocio (mantener consistentes en todos los archivos)
 
@@ -52,6 +52,7 @@ No hay tests. Verificación = `npm run build` sin errores + revisar la página e
 - Email: info@ingeniatex.com
 - Agenda: `https://calendar.app.google/QuZ6YeFf5u3HDSZT9`
 - Ubicación: Mérida, Yucatán, México
+- Destino de las cotizaciones del formulario: `ypz.omar@gmail.com` (no es el email público; `TO` en `worker/index.js` y `destination_address` en `wrangler.jsonc` deben coincidir)
 - Público objetivo: **emprendedores, profesionistas y negocios de todo tipo**. No usar "PyMEs" ni "pequeñas y medianas empresas" como posicionamiento.
 - Idioma del sitio: **español (México)**. Todo texto nuevo va en español; los "Read More", "Home", "Submit Now" que queden son restos de plantilla y se pueden traducir si se toca ese componente.
 
@@ -76,7 +77,7 @@ Si cambias un dato de contacto, haz `grep -rn` del valor viejo en `components/` 
 - `components/pages/services/service-single/services-single.jsx` decide el contenido por id: `paginas-web` → bloque + planes; `integraciones` → `Solution`; resto → `ServiceBlock`. Un id nuevo cae en el caso genérico.
 - La plantilla aplica `text-transform: capitalize` a todo el `body`; en `.service-block` y `.web-plans` está desactivado (final de `style.css`).
 - **Nunca correr `npm run build` mientras `npm run dev` está activo**: comparten `.next` y el dev server queda sirviendo HTML sin CSS. Detener dev → build → `rm -rf .next` → dev de nuevo.
-- Los formularios tienen `action="#"`: no envían nada. Si el usuario pide "que funcione el formulario", hay que elegir un servicio (Formspree, EmailJS…; Resend vía API route no es posible con el export estático) — preguntar cuál antes de implementar.
+- El formulario de `/request-quote` sí envía (ver tabla). Los demás formularios de la plantilla tienen `action="#"` y no envían nada; para conectarlos, reutilizar el patrón de `/api/cotizacion`. Si se agrega un campo al formulario de cotización, agregarlo también a `FIELDS` en `worker/index.js` o el Worker lo ignora.
 - El `<h1>` de la home es el título del banner (`home-5/banner.jsx`) y el de las páginas internas es el del breadcrumb (`common/breadcrumb.jsx`). Ambos usan reglas CSS que nombran `h1` y `h2` juntos; si cambias la etiqueta, revisa `.banner__five-content` y `.page__banner-content` al buscar en `style.css`.
 - `<label for=…>` aparece en varios formularios (debería ser `htmlFor`); genera warnings, no rompe el build.
 - `eslint-config-next@15` con `next@14`: el lint puede quejarse de reglas que no aplican. No subir Next a 15 sin pedirlo explícitamente.

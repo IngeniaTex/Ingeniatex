@@ -21,3 +21,9 @@ export const SOCIAL_PROFILES = [
     "https://www.facebook.com/profile.php?id=61580352764109",
     "https://www.instagram.com/ingeniatex_mx/",
 ];
+
+// Clave pública de Cloudflare Turnstile (anti-spam del formulario de cotización).
+// En Cloudflare se define NEXT_PUBLIC_TURNSTILE_SITE_KEY como variable de build;
+// sin ella se usa la clave de prueba, que siempre aprueba (solo sirve en local).
+export const TURNSTILE_SITE_KEY =
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA";
