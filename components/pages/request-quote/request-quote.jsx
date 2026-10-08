@@ -1,18 +1,34 @@
 "use client"
-import { useState } from "react";
+import { useRef, useState } from "react";
 import servicesData from "@/components/data/services-data";
 import webPlansData from "@/components/data/web-plans-data";
 import Turnstile from "./turnstile";
+
+const GENERIC_ERROR = "No pudimos enviar tu solicitud. Escríbenos por WhatsApp.";
+
+// Espera hasta `ms` a que Turnstile entregue el token (tarda 1–2 s al cargar).
+function waitForToken(tokenRef, ms = 15000) {
+    return new Promise((resolve) => {
+        const start = Date.now();
+        const tick = () => {
+            if (tokenRef.current || Date.now() - start > ms) return resolve(tokenRef.current);
+            setTimeout(tick, 200);
+        };
+        tick();
+    });
+}
 
 // Formulario de cotización. Se envía a POST /api/cotizacion (worker/index.js),
 // que valida Turnstile y manda el correo a ypz.omar@gmail.com.
 // Los servicios y planes del dropdown salen de services-data / web-plans-data.
 const RequestQuoteMain = () => {
     const [service, setService] = useState("");
-    // idle | sending | success | error
+    // idle | verifying | sending | success | error
     const [status, setStatus] = useState("idle");
     const [errorMessage, setErrorMessage] = useState("");
     const [attempt, setAttempt] = useState(0);
+    const tokenRef = useRef(null);
+    const turnstileErrorRef = useRef("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,12 +40,23 @@ const RequestQuoteMain = () => {
             data.set("plan-label", form.plan.selectedOptions[0]?.text || "");
         }
 
-        setStatus("sending");
         try {
+            if (!tokenRef.current) {
+                setStatus("verifying");
+                await waitForToken(tokenRef);
+            }
+            if (!tokenRef.current) {
+                const code = turnstileErrorRef.current || "turnstile-timeout";
+                throw new Error(`No pudimos verificar que no eres un robot. Recarga la página e intenta de nuevo. (${code})`);
+            }
+            data.set("cf-turnstile-response", tokenRef.current);
+
+            setStatus("sending");
             const res = await fetch("/api/cotizacion", { method: "POST", body: data });
             const result = await res.json().catch(() => ({}));
             if (!res.ok || !result.ok) {
-                throw new Error(result.error || "No pudimos enviar tu solicitud. Escríbenos por WhatsApp.");
+                const codes = result.codes?.length ? ` (${result.codes.join(", ")})` : "";
+                throw new Error((result.error || GENERIC_ERROR) + codes);
             }
             form.reset();
             setService("");
@@ -119,10 +146,19 @@ const RequestQuoteMain = () => {
                                         required
                                     ></textarea>
                                 </div>
-                                <Turnstile resetKey={attempt} />
+                                <Turnstile
+                                    resetKey={attempt}
+                                    onToken={(token) => {
+                                        tokenRef.current = token;
+                                        if (token) turnstileErrorRef.current = "";
+                                    }}
+                                    onError={(code) => {
+                                        turnstileErrorRef.current = code;
+                                    }}
+                                />
                                 <div className="quote-form__footer">
-                                    <button type="submit" className="btn-two" disabled={status === "sending"}>
-                                        {status === "sending" ? "Enviando…" : "Enviar solicitud"}
+                                    <button type="submit" className="btn-two" disabled={status === "verifying" || status === "sending"}>
+                                        {status === "verifying" ? "Verificando…" : status === "sending" ? "Enviando…" : "Enviar solicitud"}
                                         <i className="fas fa-arrow-right"></i>
                                     </button>
                                     <p className="quote-form__privacy">

@@ -21,12 +21,17 @@ function loadTurnstile() {
     return scriptPromise;
 }
 
-// Captcha invisible de Cloudflare. Agrega al <form> un input oculto
-// "cf-turnstile-response" que el Worker valida. `resetKey` lo reinicia
-// (el token solo sirve una vez).
-const Turnstile = ({ resetKey }) => {
+// Captcha de Cloudflare: casi siempre invisible, solo pide un clic si duda.
+// Entrega el token por `onToken` (null cuando expira o falla) y los errores
+// por `onError`. `resetKey` lo reinicia (cada token sirve una sola vez).
+const Turnstile = ({ resetKey, onToken, onError }) => {
     const containerRef = useRef(null);
     const widgetRef = useRef(null);
+    // Refs para que los callbacks de Turnstile siempre usen la versión actual.
+    const onTokenRef = useRef(onToken);
+    const onErrorRef = useRef(onError);
+    onTokenRef.current = onToken;
+    onErrorRef.current = onError;
 
     useEffect(() => {
         let cancelled = false;
@@ -37,9 +42,16 @@ const Turnstile = ({ resetKey }) => {
                     sitekey: TURNSTILE_SITE_KEY,
                     language: "es",
                     appearance: "interaction-only",
+                    callback: (token) => onTokenRef.current?.(token),
+                    "expired-callback": () => onTokenRef.current?.(null),
+                    "timeout-callback": () => onTokenRef.current?.(null),
+                    "error-callback": (code) => {
+                        onTokenRef.current?.(null);
+                        onErrorRef.current?.(`turnstile-${code}`);
+                    },
                 });
             })
-            .catch(() => {});
+            .catch(() => onErrorRef.current?.("turnstile-script"));
         return () => {
             cancelled = true;
             if (widgetRef.current && window.turnstile) {
@@ -51,6 +63,7 @@ const Turnstile = ({ resetKey }) => {
 
     useEffect(() => {
         if (resetKey && widgetRef.current && window.turnstile) {
+            onTokenRef.current?.(null);
             window.turnstile.reset(widgetRef.current);
         }
     }, [resetKey]);

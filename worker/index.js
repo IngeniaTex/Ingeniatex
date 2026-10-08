@@ -53,13 +53,19 @@ async function handleQuote(request, env) {
         return json({ ok: false, error: "Revisa que los campos obligatorios estén completos." }, 400);
     }
 
-    const human = await verifyTurnstile(
+    const check = await verifyTurnstile(
         form.get("cf-turnstile-response"),
         request.headers.get("CF-Connecting-IP"),
         env.TURNSTILE_SECRET_KEY
     );
-    if (!human) {
-        return json({ ok: false, error: "No pudimos verificar que no eres un robot. Intenta de nuevo." }, 403);
+    if (!check.success) {
+        // Los códigos (p. ej. invalid-input-secret, missing-input-response) salen en
+        // Observability → Logs y en la respuesta, para poder diagnosticar.
+        console.error("Turnstile rechazó la solicitud:", check.codes);
+        return json(
+            { ok: false, error: "No pudimos verificar que no eres un robot. Intenta de nuevo.", codes: check.codes },
+            403
+        );
     }
 
     try {
@@ -72,7 +78,8 @@ async function handleQuote(request, env) {
 }
 
 async function verifyTurnstile(token, ip, secret) {
-    if (!token || !secret) return false;
+    if (!secret) return { success: false, codes: ["missing-secret-env"] };
+    if (!token) return { success: false, codes: ["missing-input-response"] };
     const body = new FormData();
     body.append("secret", secret);
     body.append("response", token);
@@ -81,8 +88,8 @@ async function verifyTurnstile(token, ip, secret) {
         method: "POST",
         body,
     });
-    const outcome = await res.json();
-    return outcome.success === true;
+    const outcome = await res.json().catch(() => ({}));
+    return { success: outcome.success === true, codes: outcome["error-codes"] || [] };
 }
 
 // Arma el correo en formato MIME (texto plano, UTF-8).
