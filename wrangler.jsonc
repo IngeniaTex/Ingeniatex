@@ -6,6 +6,14 @@
   "name": "ingeniatex",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
+  // Dominios del sitio. Al desplegar, Cloudflare crea los registros DNS y el
+  // certificado. El nombre no debe tener registros A/AAAA/CNAME previos.
+  // El canónico es www (SITE_URL en components/data/site.jsx); la redirección
+  // ingeniatex.com → www se configura en la zona (Rules → Redirect Rules).
+  "routes": [
+    { "pattern": "ingeniatex.com", "custom_domain": true },
+    { "pattern": "www.ingeniatex.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
