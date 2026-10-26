@@ -11,11 +11,11 @@ const TopBanner = () => {
                     <div className="top-banner__inner">
                         <p className="top-banner__text">
                             <i className="fas fa-bolt"></i>
-                            <span className="top-banner__text-full">Diseñamos sitios web que hacen crecer negocios en México</span>
-                            <span className="top-banner__text-short">Sitios web que hacen crecer tu negocio</span>
+                            <span className="top-banner__text-full">Hacemos páginas web y aplicaciones para negocios de Mérida y todo México</span>
+                            <span className="top-banner__text-short">Páginas web y apps hechas en Mérida</span>
                         </p>
                         <Link className="top-banner__cta" href="/proyectos">
-                            Ver nuestros proyectos
+                            Mira nuestros proyectos
                             <i className="fas fa-arrow-right"></i>
                         </Link>
                     </div>

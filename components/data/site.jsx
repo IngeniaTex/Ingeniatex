@@ -5,7 +5,7 @@ export const SITE_URL = "https://www.ingeniatex.com";
 export const SITE_NAME = "Ingeniatex";
 export const SITE_TAGLINE = "Diseño y desarrollo de páginas web en Mérida";
 export const SITE_DESCRIPTION =
-    "Diseñamos y desarrollamos páginas web, aplicaciones a la medida e integraciones digitales para emprendedores, profesionistas y negocios. Estamos en Mérida, Yucatán.";
+    "Diseñamos y desarrollamos páginas web, aplicaciones a la medida e integraciones digitales para emprendedores, profesionistas y negocios. Estamos en Mérida, Yucatán, y trabajamos con clientes de todo México.";
 
 export const CONTACT = {
     phone: "+52 999 748 8654",

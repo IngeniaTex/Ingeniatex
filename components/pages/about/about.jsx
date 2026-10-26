@@ -3,8 +3,10 @@ import brand2 from "../../../public/assets/img/brand/brand-2.png";
 import brand3 from "../../../public/assets/img/brand/brand-3.png";
 import brand4 from "../../../public/assets/img/brand/brand-4.png";
 import brand5 from "../../../public/assets/img/brand/brand-5.png";
-import about1 from "../../../public/assets/img/about/about-1.png";
-import about2 from "../../../public/assets/img/about/about-2.png";
+// Mockups de ejemplo (salón de eventos "Jardín Alameda" y carpintería "Taller Nogal");
+// fuente en marketing/publicidad/sitio-hero/ (mockups.html + exportar.mjs).
+import aboutLaptop from "../../../public/assets/img/mockups/about-laptop-jardin.webp";
+import aboutPhone from "../../../public/assets/img/mockups/about-phone-taller.webp";
 import Link from "next/link";
 import Count from "../common/count";
 import WorkArea from "../homes/home/work";
@@ -26,41 +28,45 @@ const AboutMain = () => {
                                         <h4 className="counter"><Count number={10}/></h4>
                                         <span>+</span>
                                     </div>
-                                    <span>Años de Experiencia</span>
+                                    <span>Años de experiencia</span>
                                 </div>
                             </div>
-                            <div className="about__one-image-wrapper">
-                                <img src={about1.src} alt="Equipo de Ingeniatex en Mérida, Yucatán" className="image-1" />
-                                <img src={about2.src} alt="" aria-hidden="true" className="image-2" />
+                            <div className="home-mockup home-mockup--about-page">
+                                <img src={aboutLaptop.src} alt="Ejemplo de página web para un salón de eventos, vista en una laptop" />
+                                <img src={aboutPhone.src} className="home-mockup-phone animate-y-axis" alt="Ejemplo de página web para un taller de carpintería, vista en un celular" />
                             </div>
                         </div>
                     </div>
                     <div className="col-xl-6 col-lg-7 col-md-9">
                         <div className="about__one-content">
                             <span className="subtitle-one">Quiénes somos</span>
-                            <h2>Transformamos ideas en soluciones digitales</h2>
-                            <p>En <strong>Ingeniatex</strong> creemos que la tecnología debe estar al alcance de todos.
-                            Desde Mérida, Yucatán, acompañamos a emprendedores, profesionistas y negocios de todo tipo en México,
-                            ayudándolos a fortalecer su presencia digital, optimizar procesos y crecer con innovación.</p>
+                            <h2>Un equipo de Mérida que trabaja contigo de principio a fin</h2>
+                            <p>En <strong>Ingeniatex</strong> creemos que cualquier negocio merece una buena página web o
+                            una aplicación que le ahorre trabajo. Desde Mérida, Yucatán, trabajamos con emprendedores,
+                            profesionistas y negocios de todo México: te explicamos todo con palabras claras, te atendemos
+                            por WhatsApp y seguimos contigo después de entregar.</p>
                             <div className="about__one-content-service">
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Desarrollo de sitios web profesionales</span>
+                                    <span>Páginas web que se ven bien en el celular</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Desarrollo web personalizado</span>
+                                    <span>Sistemas y aplicaciones a la medida</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Mantenimiento de páginas web</span>
+                                    <span>Mantenimiento para que todo siga al día</span>
                                 </div>
                                 <div className="service">
                                     <i className="far fa-check-circle"></i>
-                                    <span>Integración de aplicaciones y automatización</span>
+                                    <span>Conexión con WhatsApp, Google y pagos en línea</span>
                                 </div>
                             </div>
-                            <Link href="/#servicios" className="btn-one">Conoce más<i className="fas fa-arrow-right"></i></Link>
+                            <div className="d-flex flex-wrap gap-3">
+                                <Link href="/#servicios" className="btn-one">Mira lo que hacemos<i className="fas fa-arrow-right"></i></Link>
+                                <Link href="/request-quote" className="btn-two">Cotiza tu proyecto<i className="fas fa-arrow-right"></i></Link>
+                            </div>
                         </div>
                     </div>
                 </div>

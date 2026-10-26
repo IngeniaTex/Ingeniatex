@@ -13,10 +13,10 @@ const FooterFive = () => {
                 <div className="row justify-content-center text-center subscribe__one-content" style={{backgroundImage: `url(${ctaBg.src})`}}>
                     <div className="col-xl-7 col-lg-8">
                         <div className="subscribe__one-title">
-                            <h3>Activa tu potencial hoy mismo</h3>
+                            <h3>¿Platicamos de tu proyecto?</h3>
                         </div>
                         <div className="subscribe-bottom">
-                            <Link href="/request-quote" className="btn-two">Cotiza!<i className="fas fa-arrow-right"></i></Link>
+                            <Link href="/request-quote" className="btn-two">Cotiza tu proyecto<i className="fas fa-arrow-right"></i></Link>
                             <div className="call-box">
                                 <div className="call-box-item">
                                     {/* <div className="call-box-item-icon">
@@ -64,7 +64,7 @@ const FooterFive = () => {
 						<div className="footer__five-widget">
 							<div className="footer__five-widget-about">
 								<Link href="/"><img src={logo.src} alt="Ingeniatex" /></Link>
-								<p>En Ingeniatex creamos soluciones digitales diseñadas para impulsar el crecimiento de tu empresa.</p>
+								<p>Hacemos páginas web y aplicaciones para negocios de Mérida y todo México.</p>
 								<div className="footer__five-widget-about-social">
 									<Social />
 								</div>
@@ -100,7 +100,7 @@ const FooterFive = () => {
 						<div className="footer__five-widget border-one">
 							<h4>Contacto</h4>
 							<div className="footer__five-widget-location">
-								<p>Contáctanos para recibir asesoría experta en nuestras soluciones digitales.</p>
+								<p>Escríbenos o llámanos, con gusto platicamos de tu proyecto.</p>
 								<div className="footer__five-widget-location-item">
 									<div className="footer__five-widget-location-item-icon">
 										<i className="flaticon-telephone-call"></i>
