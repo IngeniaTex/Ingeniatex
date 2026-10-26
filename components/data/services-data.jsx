@@ -9,7 +9,7 @@ const servicesData = [
       icon: <i className="flaticon-software-development"></i>,
       title: 'Páginas web profesionales',
       shortTitle: 'Páginas web',
-      des: 'Sitios web modernos, rápidos y adaptados a tu negocio para generar confianza, presentar tus servicios y conectar con nuevos clientes.',
+      des: 'Tu página lista para presumir tu negocio: rápida, se ve bien en el celular y con WhatsApp a un toque para que te escriban.',
       longDes: 'Creamos sitios web modernos, rápidos y adaptados a tu negocio, desde landing pages hasta soluciones corporativas más completas.',
       items: [],
       cta: { label: 'Solicitar cotización', href: '/request-quote' },
@@ -19,7 +19,7 @@ const servicesData = [
       icon: <i className="flaticon-coding"></i>,
       title: 'Desarrollo web personalizado',
       shortTitle: 'Desarrollo personalizado',
-      des: 'Desarrollamos aplicaciones, portales y funcionalidades web adaptadas a los procesos y necesidades específicas de tu negocio.',
+      des: 'Cuando una página no alcanza: sistemas, portales y aplicaciones hechos según cómo trabaja tu negocio.',
       longDes: 'Cuando una página convencional no es suficiente, desarrollamos soluciones adaptadas a los procesos de tu negocio.',
       items: [
         'Portales empresariales',
@@ -39,7 +39,7 @@ const servicesData = [
       icon: <i className="flaticon-technical-support"></i>,
       title: 'Mantenimiento web',
       shortTitle: 'Mantenimiento web',
-      des: 'Mantenemos tu página actualizada, segura y funcionando correctamente con soporte técnico y mantenimiento continuo.',
+      des: 'Nos encargamos de que tu página siga al día, segura y funcionando, para que tú te enfoques en tu negocio.',
       longDes: 'Nos encargamos del mantenimiento técnico de tu sitio para mantenerlo actualizado, seguro y funcionando correctamente.',
       items: [
         'Actualización de textos e imágenes',
@@ -62,7 +62,7 @@ const servicesData = [
       icon: <i className="flaticon-global-network"></i>,
       title: 'Integración de aplicaciones',
       shortTitle: 'Integración de aplicaciones',
-      des: 'Conectamos tu sitio o aplicación con las herramientas y servicios que ya usas para centralizar información y mejorar la experiencia de tus clientes.',
+      des: 'Conectamos tu página con WhatsApp, Google, pagos y las herramientas que ya usas, para no capturar lo mismo dos veces.',
       longDes: 'Conectamos tu página o aplicación con las plataformas que tu negocio ya utiliza, para que la información fluya entre ellas sin capturas dobles ni procesos manuales.',
       items: [
         'WhatsApp',
@@ -86,7 +86,7 @@ const servicesData = [
       icon: <i className="flaticon-data-scientist"></i>,
       title: 'QA y automatización',
       shortTitle: 'QA y automatización',
-      des: 'Automatizamos pruebas, procesos y flujos de negocio para reducir errores, ahorrar tiempo y asegurar que todo funcione como debe.',
+      des: 'Automatizamos las tareas repetitivas y revisamos que todo funcione antes de que lo vean tus clientes.',
       longDes: 'Automatizamos lo que hoy se hace a mano: desde las pruebas de tu aplicación hasta los procesos y flujos de trabajo de tu negocio, para que tu equipo se concentre en lo importante y los errores se detecten antes de llegar a tus clientes.',
       items: [
         'Automatización de procesos y flujos de negocio',
