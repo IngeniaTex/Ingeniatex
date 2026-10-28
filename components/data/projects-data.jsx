@@ -1,9 +1,11 @@
-// Proyectos mostrados en la sección "Proyectos" de la home (#proyectos).
+// Proyectos mostrados en /proyectos, en este orden.
 // Las imágenes son capturas de cada sitio, en public/assets/img/projects/.
 import ingeniatex from "../../public/assets/img/projects/ingeniatex.png";
 import boka from "../../public/assets/img/projects/boka.png";
 import rodher from "../../public/assets/img/projects/rodher.png";
 import pok from "../../public/assets/img/projects/pok.png";
+import dovera from "../../public/assets/img/projects/dovera.png";
+import salonTerraza from "../../public/assets/img/projects/salon-terraza.png";
 import serviciosDemo from "../../public/assets/img/projects/servicios-demo.png";
 import doctorDemo from "../../public/assets/img/projects/doctor-demo.png";
 import deliverySignIn from "../../public/assets/img/projects/delivery-1.png";
@@ -12,20 +14,12 @@ import deliveryCart from "../../public/assets/img/projects/delivery-3.png";
 
 const projectsData = [
     {
-      id: 'boka',
-      name: 'BOKA',
-      category: 'Clínica dental',
-      description: 'Sitio corporativo para una clínica dental: presentación de tratamientos, instalaciones y contacto directo con pacientes.',
-      image: boka,
-      url: 'https://boka.mx/',
-    },
-    {
-      id: 'rodher',
-      name: 'RODHER Ingeniería',
-      category: 'Energía solar y bombeo',
-      description: 'Sitio con catálogo de servicios y productos, formulario de cotizaciones y presencia para búsquedas del sector industrial.',
-      image: rodher,
-      url: 'https://www.rodheringenieria.com.mx/',
+      id: 'ingeniatex',
+      name: 'Ingeniatex',
+      category: 'Nuestro propio sitio',
+      description: 'Nuestra página: servicios, planes de páginas web y solicitud de cotización en línea.',
+      image: ingeniatex,
+      url: 'https://www.ingeniatex.com/',
     },
     {
       id: 'pok-taller',
@@ -36,12 +30,37 @@ const projectsData = [
       url: 'https://pok-taller.vercel.app/',
     },
     {
-      id: 'ingeniatex',
-      name: 'Ingeniatex',
-      category: 'Nuestro propio sitio',
-      description: 'Nuestra página: servicios, planes de páginas web y solicitud de cotización en línea.',
-      image: ingeniatex,
-      url: 'https://ingeniatex.vercel.app/',
+      id: 'rodher',
+      name: 'RODHER Ingeniería',
+      category: 'Energía solar y bombeo',
+      description: 'Sitio con catálogo de servicios y productos, formulario de cotizaciones y presencia para búsquedas del sector industrial.',
+      image: rodher,
+      url: 'https://www.rodheringenieria.com.mx/',
+    },
+    {
+      // Página de enlaces (link in bio) en formato móvil: se muestra como pantalla vertical.
+      id: 'dovera',
+      name: 'Dôvera Lab',
+      category: 'Laboratorio dental',
+      description: 'Página de enlaces para Instagram: escaneo intraoral a domicilio, WhatsApp, envío de casos, lista de precios y ubicación.',
+      images: [dovera],
+      url: 'https://dovera-lab-links.vercel.app/',
+    },
+    {
+      id: 'salon-terraza',
+      name: 'Salón Terraza',
+      category: 'Salón de eventos',
+      description: 'Sitio para un salón de eventos: presentación del salón, servicios, paquetes con pagos a plazos y reservación por WhatsApp.',
+      image: salonTerraza,
+      url: 'https://salonterraza.com.mx/',
+    },
+    {
+      id: 'boka',
+      name: 'BOKA',
+      category: 'Clínica dental',
+      description: 'Sitio corporativo para una clínica dental: presentación de tratamientos, instalaciones y contacto directo con pacientes.',
+      image: boka,
+      url: 'https://boka.mx/',
     },
     {
       id: 'servicios-demo',
