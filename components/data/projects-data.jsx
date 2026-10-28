@@ -42,7 +42,7 @@ const projectsData = [
       id: 'dovera',
       name: 'Dôvera Lab',
       category: 'Laboratorio dental',
-      description: 'Página de enlaces para Instagram: escaneo intraoral a domicilio, WhatsApp, envío de casos, lista de precios y ubicación.',
+      description: 'Página de enlaces para Instagram: WhatsApp, envío de casos, lista de precios y ubicación.',
       images: [dovera],
       url: 'https://dovera-lab-links.vercel.app/',
     },
