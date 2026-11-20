@@ -54,7 +54,6 @@ const MainMenu = () => {
                 </li> */}
                 <li><Link href="/proyectos">Portafolio</Link></li>
                 <li><Link href="/services/paginas-web#paquetes">Precios</Link></li>
-                <li><Link href="/about">Nosotros</Link></li>
                 <li><Link href="/request-quote#formulario">Cotizaciones</Link></li>
             </ul>
         </>
