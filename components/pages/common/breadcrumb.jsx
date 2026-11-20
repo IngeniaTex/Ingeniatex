@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import image from "../../../public/assets/img/banner/page-banner-img.png";
+// Ilustración de página web + app (fuente en marketing/publicidad/banner-paginas-web/).
+import image from "../../../public/assets/img/banner/page-banner.webp";
 import shape from "../../../public/assets/img/shape/page-banner-shape.png";
 
 const BreadCrumb = ({title, innerTitle}) => {

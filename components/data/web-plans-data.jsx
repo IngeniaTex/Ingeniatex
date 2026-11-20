@@ -1,5 +1,5 @@
-// Planes de páginas web mostrados en /services/paginas-web (components/pages/services/service/web-plans.jsx).
-// Los precios son "desde" y en MXN. No publicar mensualidades, financiamiento ni esquemas de renta.
+// Paquetes de páginas web mostrados en /services/paginas-web (components/pages/services/service/web-plans.jsx).
+// Los precios son "desde", en MXN y sin IVA (la tarjeta muestra "IVA no incluido"). No publicar mensualidades, financiamiento ni esquemas de renta.
 // Redacción pensada para cliente final: evitar siglas y términos técnicos (SSL, hosting, SEO, API…).
 const webPlansData = [
     {
@@ -9,7 +9,7 @@ const webPlansData = [
       description: 'Ideal para emprendedores, profesionales independientes y negocios que quieren empezar a tener presencia en internet.',
       recommended: false,
       features: [
-        'Una página con hasta 5 secciones (presentación, servicios, contacto, etc.)',
+        'Landing page: una sola página con hasta 5 secciones (presentación, servicios, contacto, etc.)',
         'Diseño profesional adaptado a tu marca',
         'Se ve bien en celular, tablet y computadora',
         'Formulario de contacto',
@@ -28,7 +28,7 @@ const webPlansData = [
       description: 'Para negocios que necesitan un sitio más completo para presentar su empresa, sus servicios y conseguir nuevos clientes.',
       recommended: true,
       features: [
-        'Hasta 5 páginas (Inicio, Servicios, Nosotros, Contacto, etc.)',
+        'Hasta 8 páginas (Inicio, Servicios, Nosotros, Contacto, etc.)',
         'Diseño personalizado para tu marca',
         'Se ve bien en celular, tablet y computadora',
         'Formularios de contacto y cotización',
@@ -36,7 +36,6 @@ const webPlansData = [
         'Enlaces a tus redes sociales',
         'Mapa de ubicación (Google Maps)',
         'Galería / Portafolio de proyectos',
-        'Estadísticas de visitas',
         'Optimización para buscadores en todas tus páginas',
         'Sitio seguro (candado https)',
         'Dominio y alojamiento gratis el primer año',
@@ -61,7 +60,6 @@ const webPlansData = [
         'Galería / Portafolio de proyectos',
         'Blog o sección de noticias',
         'Conexión con pagos, CRM y otras herramientas',
-        'Estadísticas de visitas',
         'Carga rápida',
         'Optimización avanzada para buscadores',
         'Sitio seguro (candado https)',
@@ -74,9 +72,9 @@ const webPlansData = [
 
   // Aclaraciones que se muestran debajo de las cards, en texto discreto.
   export const webPlansNotes = [
-    'Todos los planes incluyen el dominio (tu dirección .com) y el alojamiento del sitio sin costo durante el primer año. A partir del segundo año, la renovación se cotiza según los servicios contratados.',
+    'Todos los paquetes incluyen el dominio (tu dirección .com) y el alojamiento del sitio sin costo durante el primer año. A partir del segundo año, la renovación se cotiza según los servicios contratados.',
     'El dominio se registra a nombre del cliente para garantizar que siempre sea tuyo.',
-    'La optimización incluida prepara tu sitio para que los buscadores lo encuentren y lo muestren correctamente. Los planes no incluyen posicionamiento SEO ni campañas de marketing digital; son servicios continuos que se cotizan por separado.',
+    'La optimización incluida prepara tu sitio para que los buscadores lo encuentren y lo muestren correctamente. Los paquetes no incluyen posicionamiento SEO ni campañas de marketing digital; son servicios continuos que se cotizan por separado.',
     'Los correos empresariales (Google Workspace, Microsoft 365 u otros) se cotizan por separado.',
   ];
 

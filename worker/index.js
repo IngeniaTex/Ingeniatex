@@ -106,7 +106,7 @@ function buildEmail(d) {
         `Servicio:  ${service}`,
     ];
     if (d.service === "paginas-web") {
-        lines.push(`Plan:      ${d["plan-label"] || "Sin definir"}`);
+        lines.push(`Paquete:   ${d["plan-label"] || "Sin definir"}`);
     }
     lines.push(``, `Mensaje:`, d.message, ``, `—`, `Responde a este correo para contestarle directo al cliente.`);
 

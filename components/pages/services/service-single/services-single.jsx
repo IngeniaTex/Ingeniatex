@@ -3,7 +3,7 @@ import WebPlans from "../service/web-plans";
 import Solution from "../../homes/home-5/solution";
 
 // Contenido de la página de detalle según el servicio.
-// - paginas-web: bloque descriptivo + planes Starter / Business / Pro.
+// - paginas-web: bloque descriptivo + paquetes Starter / Business / Pro.
 // - integraciones: sección de integraciones (Solution).
 // - resto: bloque descriptivo con lista, nota y CTA.
 const ServicesSingleMain = ({ service }) => {

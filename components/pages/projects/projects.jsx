@@ -30,6 +30,9 @@ const Projects = () => {
                                 <div className="projects__card-content">
                                     <span className="projects__card-category">{project.category}</span>
                                     <h4>{project.name}</h4>
+                                    {project.location && (
+                                        <span className="projects__card-location"><i className="fas fa-map-marker-alt"></i>{project.location}</span>
+                                    )}
                                     <p>{project.description}</p>
                                     {project.url && (
                                         <span className="projects__card-link">Visitar sitio<i className="fas fa-arrow-right"></i></span>

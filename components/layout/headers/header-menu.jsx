@@ -6,7 +6,7 @@ const MainMenu = () => {
         <>
             <ul>
                 <li className="menu-item-has-children">
-                    <Link href="/">Home</Link>
+                    <Link href="/">Inicio</Link>
                    {/*  <ul className="sub-menu">
                         <li><Link href="/">Home 01</Link></li>
                         <li><Link href="/home-two">Home 02</Link></li>
@@ -52,8 +52,10 @@ const MainMenu = () => {
                         <li><Link href="/blog/ux-ui-designing-the-future-web-design">Blog Details</Link></li>
                     </ul>
                 </li> */}
+                <li><Link href="/proyectos">Portafolio</Link></li>
+                <li><Link href="/services/paginas-web#paquetes">Precios</Link></li>
                 <li><Link href="/about">Nosotros</Link></li>
-                <li><Link href="/request-quote">Contacto</Link></li>
+                <li><Link href="/request-quote#formulario">Cotizaciones</Link></li>
             </ul>
         </>
     );
