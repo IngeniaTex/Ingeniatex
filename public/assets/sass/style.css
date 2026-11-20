@@ -11504,6 +11504,14 @@ Responsive Menu Css
   color: var(--primary-color-1);
   margin-bottom: 18px;
 }
+.web-plans__price-note {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--body-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-2);
+}
 .web-plans__description {
   color: var(--color-2);
   font-size: 16px;
@@ -11852,6 +11860,16 @@ Responsive Menu Css
 .projects__card:hover .projects__card-content h4 {
   color: var(--primary-color-1);
 }
+.projects__card-location {
+  display: block;
+  font-size: 14px;
+  color: var(--color-2);
+  margin: -4px 0 12px 0;
+}
+.projects__card-location i {
+  margin-right: 7px;
+  color: var(--primary-color-1);
+}
 .projects__card-content p {
   color: var(--color-2);
   font-size: 16px;
@@ -12111,12 +12129,13 @@ Responsive Menu Css
   }
 }
 
-/* Los anclas (#servicios, etc.) deben dejar libre también la barra superior */
+/* Los anclas (#servicios, #paquetes, #formulario…) deben dejar libre también la barra superior */
 .service-block,
 .technology-solution__one,
 .web-plans,
 .services__five,
-.projects__area {
+.projects__area,
+.quote-form {
   scroll-margin-top: calc(110px + var(--top-banner-height));
 }
 

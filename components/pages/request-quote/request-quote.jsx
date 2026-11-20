@@ -70,7 +70,7 @@ const RequestQuoteMain = () => {
     };
 
     return (
-        <div className="request-quote__area quote-form section-padding">
+        <div className="request-quote__area quote-form section-padding" id="formulario">
             <div className="container">
                 <div className="row gy-4 justify-content-center">
                     <div className="col-xl-8 col-lg-8">
@@ -124,7 +124,7 @@ const RequestQuoteMain = () => {
                                     </div>
                                     {service === "paginas-web" && (
                                         <div className="request-quote__area-input-field">
-                                            <label htmlFor="plan">¿Tienes un plan en mente?</label>
+                                            <label htmlFor="plan">¿Tienes un paquete en mente?</label>
                                             <div className="quote-form__select">
                                                 <select id="plan" name="plan" defaultValue="">
                                                     <option value="">Sin definir, quiero recomendación</option>

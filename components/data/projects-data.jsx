@@ -1,5 +1,6 @@
 // Proyectos mostrados en /proyectos, en este orden.
 // Las imágenes son capturas de cada sitio, en public/assets/img/projects/.
+// location: ciudad del negocio; las demos no llevan.
 import ingeniatex from "../../public/assets/img/projects/ingeniatex.png";
 import boka from "../../public/assets/img/projects/boka.png";
 import rodher from "../../public/assets/img/projects/rodher.png";
@@ -17,7 +18,8 @@ const projectsData = [
       id: 'ingeniatex',
       name: 'Ingeniatex',
       category: 'Nuestro propio sitio',
-      description: 'Nuestra página: servicios, planes de páginas web y solicitud de cotización en línea.',
+      location: 'Mérida, Yucatán',
+      description: 'Nuestra página: servicios, paquetes de páginas web y solicitud de cotización en línea.',
       image: ingeniatex,
       url: 'https://www.ingeniatex.com/',
     },
@@ -25,14 +27,16 @@ const projectsData = [
       id: 'pok-taller',
       name: 'POK Taller',
       category: 'Carpintería a la medida',
+      location: 'Mérida, Yucatán',
       description: 'Sitio con galería de proyectos, cotización en línea y contacto por WhatsApp para un taller de clósets y cocinas.',
       image: pok,
-      url: 'https://pok-taller.vercel.app/',
+      url: 'https://www.poktaller.com/',
     },
     {
       id: 'rodher',
       name: 'RODHER Ingeniería',
       category: 'Energía solar y bombeo',
+      location: 'Mérida, Yucatán',
       description: 'Sitio con catálogo de servicios y productos, formulario de cotizaciones y presencia para búsquedas del sector industrial.',
       image: rodher,
       url: 'https://www.rodheringenieria.com.mx/',
@@ -42,6 +46,7 @@ const projectsData = [
       id: 'dovera',
       name: 'Dôvera Lab',
       category: 'Laboratorio dental',
+      location: 'Mérida, Yucatán',
       description: 'Página de enlaces para Instagram: WhatsApp, envío de casos, lista de precios y ubicación.',
       images: [dovera],
       url: 'https://dovera-lab-links.vercel.app/',
@@ -50,6 +55,7 @@ const projectsData = [
       id: 'salon-terraza',
       name: 'Salón Terraza',
       category: 'Salón de eventos',
+      location: 'Los Reyes La Paz, Estado de México',
       description: 'Sitio para un salón de eventos: presentación del salón, servicios, paquetes con pagos a plazos y reservación por WhatsApp.',
       image: salonTerraza,
       url: 'https://salonterraza.com.mx/',
@@ -58,6 +64,7 @@ const projectsData = [
       id: 'boka',
       name: 'BOKA',
       category: 'Clínica dental',
+      location: 'Chilpancingo, Guerrero',
       description: 'Sitio corporativo para una clínica dental: presentación de tratamientos, instalaciones y contacto directo con pacientes.',
       image: boka,
       url: 'https://boka.mx/',
